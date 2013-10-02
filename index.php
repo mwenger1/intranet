@@ -40,7 +40,7 @@ if(count($_POST) > 0){
 			$subject = "mwenger@openaction.org";
 			$message = "the function worked magically when adding an event";
 			
-			sendMessage($to,$from,$subject,$message)
+			sendMessage($to,$from,$subject,$message);
 			
 			break;
 
