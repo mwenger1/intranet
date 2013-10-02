@@ -84,8 +84,9 @@ $(document).ready(function(){
 		} else if (tempValue == "New Web Page"){
 			$(".requestSection").hide();
 			$("#newPageRequest").show();
-
-
+		} else if (tempValue == "Not Sure"){
+			$(".requestSection").hide();
+			$("#otherRequest").show();
 		} else{
 			$(".requestSection").hide();
 		}

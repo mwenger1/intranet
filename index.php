@@ -339,6 +339,11 @@ if(count($_POST) > 0){
 		</p>
 	</div>
 
+<!-- OTHER REQUEST -->
+	<div id="otherRequest" class="requestSection">
+		<p>Can't figure out which option to select from the drop down above. Email <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> with the details of what you are looking for.</p>
+	</div>
+
 <!-- BUG REQUEST -->
 	<div id="bugRequest" class="requestSection">
 		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
