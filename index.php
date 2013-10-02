@@ -271,10 +271,13 @@ if(count($_POST) > 0){
 
 <!-- SOCIAL POSTS -->
 	<div id="socialPosts" class="requestSection">
-		<p>All social posts on Twitter, Facebook and Google Plus are manager by <a href="mailto:sstartz@michaeljfox.org">Stephanie Startz</a>. Email Stephanie if you would like to promote specific content. Things to thing about:
+		<p>All social posts on Twitter, Facebook and Google Plus are managed by Stephanie Startz. <a href="mailto:sstartz@michaeljfox.org?subject=Social Post Request">Email Stephanie</a> to promote your content.</p>
+		<p>Things to include in your email:
 			<ul>
-				<li>What is the timing for the posts?</li>
-				<li>Be sure to use a Custom URL Tracking link.</li>
+				<li>What is the goal of the post (i.e. drive awareness, clinical trial signups, team fox event)</li>
+				<li>Does the post need an image (include as image if available)?</li>
+				<li>What is the timing for the posts? To best plan out the social calendar, it is helpful to notify Stephanie 2 weeks to 1 month in advance.</li>
+				<li>Should the posts be geotargeted? To what location?</li>
 			</ul>
 	</div>
 
