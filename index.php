@@ -168,33 +168,40 @@ if(count($_POST) > 0){
 <!-- VANITY URL -->
 	<div id="blogPost" class="requestSection" >
 	 	<h3>If you have access to the Content Managment System (CMS):</h3>
-			<ol>
-				<li>Follow <a href="#">Blog Best Practices</a> and <a href="http://50.57.35.97/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
+			<ol>	
 				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and add your post</a></li>				
-				<li>Be sure to preview your post on the website by clicking the preview button.</li>
-				<li>Tag the post using the appropriate taxonmy terms.</a></li>
+				<li>Tag the post using the appropriate taxonomy terms.</a></li>
 				<li>Use <a href="http://croply.com/" target="_blank">crop.ly</a> to edit image dimensions. NOTE: images should be 636px wide x 339px height.</li>
-				<li>Email Stephanie when your post is ready to be published on the site.
+				<li>Be sure to preview your post on the website by clicking the preview button.</li>
 					<ul>
-						<li>Include in email if timing is important. NOTE: Posts are published at 9am, 12pm and 3pm.
+						<li>Make sure all links work.
+						</li>
+						<li>Make sure image is properly formatted.
+						</li>
+
+					</ul>
+				</li>
+				<li>Email Stephanie when your post has been loaded into the CMS and is ready to be published on the site.
+					<ul>
+						<li>Include if timing is important. NOTE: Posts are published at roughly 9am, 12pm and 3pm.
 						</li>
 					</ul>
 				</li>
+				<li>Helpful Resources: <a href="#">Blog Best Practices</a> and <a href="https://www.michaeljfox.org/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
 
 			</ol>
-
-
 	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
 			<ol>
-				<li>Follow <a href="#">Blog Best Practices</a></li>
-				<li>Write your post in a word document and email to <a href="mailto:sstartz@michaeljfox.org?subject='Adding a New Blog Post'">Stephanie Startz</a></li>
-				<li>If your post is going to include an image, make sure it is high quality and attach it in your email.</li>
-				<li>If timing is important, make sure to include that in your email to Stephanie
+				<li>Email the blogger for your team
 					<ul>
-						<li>Include in email if timing is important. NOTE: Posts are published at 9am, 12pm and 3pm.
-						</li>
+						<li>Lauren Anderson (Development)</li>
+						<li>Liz Diemer (Team Fox)</li>
+						<li>Liz Joyce (Research Partnerships)</li>
+						<li>Maggie McGuire (Research & MarComm)</li>
+						<li>Stephanie Startz (Digital Strategy)</li>
 					</ul>
 				</li>
+				<li>Helpful Resources: <a href="#">Blog Best Practices</a></li>
 			</ol>
 		
 	</div>
@@ -309,7 +316,7 @@ if(count($_POST) > 0){
 
 <!-- NEW PAGE REQUEST -->
 	<div id="newPageRequest" class="requestSection">
-		<p>To create a new page for the website, set up a half-hour meeting with either Hannah Oppenheimer and Michael Wenger.</p>
+		<p>To create a new page for the website, set up a half-hour meeting with Hannah Oppenheimer and Michael Wenger.</p>
 		<p>Some things to think about before the meeting:
 			<ul>
 				<li>It takes 3-5 days to put together a single landing page. 1-2 weeks to create several pages (or a mini-site). Schedule appropriately.</li>
