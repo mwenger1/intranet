@@ -51,16 +51,17 @@ if(count($_POST) > 0){
 			 
 			if($_POST["priority"] == "Major"){
 				$to = array('to' => 'michaelwenger27@gmail.com', 'cc' =>  'mwenger@michaeljfox.org');
-			} else{
+			} else {
 				$to = "michaelwenger27@gmail.com"; //cases@michaeljfox.fogbugz.com
 			}
+
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br>";
 			$message .= $_POST["bugdescription"];
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$output = "Your request was successfully submitted. You should get a confirmation email to your inbox that provides the Fogbugz tracking number for future reference. You will get an email once the issue is resolved."
+				$output = "Your request was successfully submitted. You should get a confirmation email to your inbox that provides the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
 				$output = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
