@@ -559,11 +559,12 @@ if(count($_POST) > 0){
 
 
 	<div id="emailRequest" class="requestSection">
-		<p>Note:
-			<ul>
-				<li>The <a href="#">foundation email calendar</a> displays all outgoing emails from all departments.</li>
-				<li>The calendar is managed by <a href="mailto:skeating@michaeljfox.org">Sean Keating</a> and <a href="mailto:nmarino@michaeljfox.org">Nico Marino</a> and the weekly core content meeting finalizes the schedule. If you would like to add your email to the calendar, email either Sean or Nico.</li>
-
+		<p>Steps:</p>
+		<ol>
+			<li>Add email to the MJFF Email Calendar in Outlook one week prior to delivery.</li>
+			<li>Fill in this <a href="mailto:cases@michaeljfox.fogbugz.com?subject=Email Request&body=Subject Line:%0D%0A%0D%0AAudience:%0D%0A%0D%0A%0D%0A%0D%0ASuppression:%0D%0A%0D%0A%0D%0A%0D%0AImage: (if available, attach to this email)%0D%0A%0D%0A%0D%0A%0D%0AEmail Content: %0D%0A%0D%0A"> email template</a> the day before delivery by 2pm.</li>
+		</ol>
+		
 
 	</div>
 
