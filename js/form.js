@@ -22,6 +22,7 @@ $(document).ready(function(){
 				var submitterName = identifySubmitter(tmpValue);
 				if (submitterName){
 					$("#submitterName").text(submitterName);
+					$("input[name=fromemail]").val(tmpValue);
 					$("#requestOptions").show();
 					$("#requestOptionsError").html("");
 				} else{

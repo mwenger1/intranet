@@ -8,6 +8,8 @@ if(count($_POST) > 0){
 	// echo "form is submitting";
 	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
 	$submitMessage = "";
+	
+
 	switch($_POST["hiddenfield"]) {
 		case 'vanityURL':
 			$submitMessage .= "You're Vanity URL has successfully been submitted and will be available starting this Friday.<br><br>www.michaeljfox.org/<span class='bold'>" . $_POST["vanityAddress"] . "</span> will point to:<br><a href='" . $_POST["vanityPointer"] . "'>" . $_POST["vanityPointer"] . "</a><br><br><span class='bold'>NOTE:</span> Make sure that the URL above points to a working page. If any issues, you can followup with <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a>.";
@@ -44,6 +46,16 @@ if(count($_POST) > 0){
 			
 			break;
 
+		case 'bugrequest':
+			$subject = $_POST["priority"] . " - " . $_POST["bugname"];
+			$to = "michaelwenger27@gmail.com"; //cases@michaeljfox.fogbugz.com
+			$from = $_POST["fromemail"];
+			$message = "Browser: " . $_POST["bugbrowser"] . "<br>";
+			$message .= "URL: " . $_POST["bugurl"] . "<br>";
+			$message .= $_POST["bugdescription"];
+			sendMessage($to,$from,$subject,$message);
+
+			break;
 
 		
 		default:
@@ -309,9 +321,57 @@ if(count($_POST) > 0){
 
 <!-- BUG REQUEST -->
 	<div id="bugRequest" class="requestSection">
-		<p>Bugs happen and thanks for your help in finding one.</p>
-		
-		<p>Email <a href="mailto:cases@michaeljfox.fogbugz.com">cases@michaeljfox.fogbugz.com</a> to report the issue. In your email, be sure to:
+		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
+		<form action="" method="post" >
+			
+			<input type="text" placeholder="Succinctly Describe the Bug" style="width:400px;" class="mb1" name="bugname"/>
+			<br>
+
+			<select name="priority" class="mb1">
+				<option>Choose a Priority</option>
+				<option value="Major">Critical - Affects Majority of Users. Functionality not working.</option>
+				<option value="Medium">Medium - Affects Some Users. Fix When We Can.</option>
+				<option value="Minor">Minor - Less Important. Get to when there's time.</option>
+			</select>
+			<br>
+
+			<input type="url" name="bugurl" placeholder="Website URL for where the bug was discovered" style="width:400px;" class="mb1"/>
+			<br>
+			<select name="bugbrowser" class="mb1">
+				<option>Browser Used</option>
+					<optgroup label="Internet Explorer">
+						<option value="ie10">Internet Explorer 10</option>
+						<option value="ie9">Internet Explorer 9</option>
+						<option value="ie8">Internet Explorer 8</option>
+						<option value="ie7">Internet Explorer 7</option>
+					</optgroup>
+					<optgroup label="Modern Browsers">
+						<option value="chrome">Chrome</option>
+						<option value="opera">Opera</option>
+						<option value="firefox">Firefox</option>
+						<option value="safari">Safari</option>
+					</optgroup>
+					<optgroup label="Mobile/Tablet">
+						<option value="iphone5">iphone5</option>
+						<option value="iphone4">iphone4</option>
+						<option value="windowsphone">iPad</option>
+						<option value="android">Android</option>
+						<option value="androidtablet">Android Tablet</option>
+						<option value="androidtablet">Android Tablet</option>
+						<option value="blackberry">Blackberry</option>
+						<option value="windowsphone">Windows Phone</option>
+
+					</optgroup>
+
+			</select>
+			<br>
+			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug."></textarea>
+
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="hiddenfield" value="bugrequest" />
+			<input type="submit" value="Submit Your Bug" />
+		</form>
+		<!-- <p>Email <a href="mailto:cases@michaeljfox.fogbugz.com">cases@michaeljfox.fogbugz.com</a> to report the issue. In your email, be sure to:
 			<ul>
 				<li>Succinctly explain the problem in the subject line along with how critical the issue is.</li>
 					<ul>
@@ -323,7 +383,7 @@ if(count($_POST) > 0){
 				<li>If you think it may help us understand the issue, you can <a href="http://www.take-a-screenshot.org/" target="_blank">take a screenshot</a> of the problem and include as an attachment in your email.</li>
 				<li>Include what browser are you using. (i.e - Internet Explorer 8, Google Chrome, Safari browser on iPhone5)
 			</ul>
-		</p>
+		</p> -->
 	</div>
 
 <!-- CHECK ON CASE -->
