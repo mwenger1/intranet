@@ -10,17 +10,25 @@ $(document).ready(function(){
 	$("#requestOptions").hide();
 	
 	/* Figure out user */
-	$("#email").blur(function(){
-		var tmpValue = $(this).val();
-		var submitterName = identifySubmitter(tmpValue);
-		console.log(submitterName);
-		if (submitterName){
-			$("#submitterName").text(submitterName);
-			$("#requestOptions").show();
-			$("#requestOptionsError").html("");
-		} else{
-			$("#requestOptions").hide();
-			$("#requestOptionsError").html("This email is not valid. Make sure you use @michaeljfox.org. If you are a new employee, email <a href='mailto:mwenger@michaeljfox.org'>mwenger@michealjfox.org</a> to add your name to the list.");
+
+	$("#email").bind('blur keyup',function(e) { 
+		if (e.type == 'blur' || e.keyCode == '13'){ 
+
+			var tmpValue = $(this).val();
+			if(!tmpValue){
+				$("#requestOptions").hide();
+				$("#requestOptionsError").hide();
+			} else {
+				var submitterName = identifySubmitter(tmpValue);
+				if (submitterName){
+					$("#submitterName").text(submitterName);
+					$("#requestOptions").show();
+					$("#requestOptionsError").html("");
+				} else{
+					$("#requestOptions").hide();
+					$("#requestOptionsError").show().html("This email is not valid. Make sure you use @michaeljfox.org. If you are a new employee, email <a href='mailto:mwenger@michaeljfox.org'>mwenger@michealjfox.org</a> to add your name to the list.");
+				}
+			}
 		}
 	});
 
@@ -33,7 +41,6 @@ $(document).ready(function(){
 		
 		if (tempValue == "Vanity URL"){
 			$(".requestSection").hide();
-			console.log('this ran');
 			$("#vanityURL").show();
 			$("#vanityAddress").focus();
 		} else if (tempValue == "Event on Calendar"){
