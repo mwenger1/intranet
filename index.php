@@ -72,7 +72,7 @@ if(count($_POST) > 0){
 	<div class="container">
 	<div id="header">
 		<img src="https://www.michaeljfox.org/images/mjff-logo.gif" style="width: 200px;" />
-    	<h1>Digital Strategy Website Requests</h1>
+    	<h1>Digital Strategy Requests</h1>
     </div>	
 <?php
 	if ($formSubmitted){
