@@ -208,13 +208,19 @@ if(count($_POST) > 0){
 
 <!-- IMAGE -->
 	<div id="createImage" class="requestSection" >
-	 	<p>To create a custom image, email <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> and provide as much information as possible. Things to think about include:
+	 	<p>To create a custom image, email <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> with as much information as possible.</p>
+	 	<p>Things to think about and include:
 			<ol>
-				<li>Do you already have an image that can be used and modified?</li>
+				<li>Do you already have an image that can be used and modified? (attache these to your email)</li>
 				<li>What are the dimensions of the images?</li>
 				<li>Where will the image be used?</li>
+				<li>Do you already have an image that can be used and modified?</li>
+				<li>When do you need the image by? NOTE: Images are time intensive. Try to give at least 3 days notice</li>
+
 			</ol>
 		</p>
+		<p><span style="font-weight:bold; font-style-italic;">NOTE: <span style="text-transform:lowercase;">COMING SOON, THIS WORKFLOW WILL BE REPLACED BY AN ONLINE FORM ON THIS PAGE</span></span>
+		<p>
 	</div>
 
 
@@ -241,7 +247,7 @@ if(count($_POST) > 0){
 			</ul>
 		</p>
 			<form action="" method="post">
-			What are you trying to understand?<br>
+			What are you trying to gain insight into?<br>
 			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
@@ -253,7 +259,7 @@ if(count($_POST) > 0){
 	<div id="ftfAnalytics" class="requestSection">
 	 	<p>Note:
 			<ul>
-				<li>All Fox Trial Finder Analytics analysis is conducted on Fridays. Be sure to schedule appropriately.</li>
+				<li>Fox Trial Finder Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> by end of day Friday.</li>
 				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
 				<li>What segment are you looking to analyze? (traffic from a custom url? visitors to a specific page?)</li>
 				<li>What conversions are important to look at (donations, email signups)?</li>
@@ -261,13 +267,37 @@ if(count($_POST) > 0){
 			</ul>
 		</p>
 			<form action="" method="post">
-			What are you trying to understand?<br>
+			What are you trying to gain insight into?<br>
 			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
 			</form>
 	</div>
+
+<!-- CRM ANALYTICS -->
+	<div id="crmAnalytics" class="requestSection">
+		<p>CRM analytics is conducted by <a href="mailto:nmarino@michaeljfox.org">Nico Marino</a>.</p>
+		<p>When you submit your request, Nico will respond with timing (based on other requests in the queue, and how intensive the report is to pull).</p>
+
+	 	<p>Things to think about:
+			<ul>
+
+				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
+				<li>What segment are you looking to analyze? (traffic from a custom url? visitors to a specific page?)</li>
+				<li>What conversions are important to look at (donations, email signups)?</li>
+				<li>What timeline are you looking to analyze (past week, this month compared to the same time last year)?</li>
+			</ul>
+		</p>
+			<form action="" method="post">
+			What are you trying to gain insight into?<br>
+			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
+			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
+			<input type="submit" value="Request Analysis" />
+
+			</form>
+	</div>
+
 
 <!-- SOCIAL POSTS -->
 	<div id="socialPosts" class="requestSection">
@@ -415,7 +445,7 @@ if(count($_POST) > 0){
 	<div id="fogbugzRequest" class="requestSection">
 		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation. Requests are called cases. When one of your cases is completed, you will automatically be notified by email.</p>
 		<p>If you want to check on the status of an open case, click on the link that was in the automated email response from cases@michaeljfox.fogbugz.com OR if you know your case ID number, you can fill it in on <a href="https://michaeljfox.fogbugz.com/default.asp?pg=pgPublicViewForm" target="_blank">Fogbugz</a>.</p>
-		<p>If you want to see how your case is prioritized relative to other requests coming from your department, click on your department below: <span style="font-weight:bold; font-style-italic;">NOTE: THIS FEATURS IS COMING SOON</span>
+		<p>If you want to see how your case is prioritized relative to other requests coming from your department, click on your department below: <span style="font-weight:bold; font-style-italic;">NOTE: THIS FEATURE IS COMING SOON</span>
 			<li><a href="#">Administration</a></li>
 			<li><a href="#">Development</a></li>
 			<li><a href="#">MarComm</a></li>

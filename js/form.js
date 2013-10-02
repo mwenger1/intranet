@@ -72,6 +72,10 @@ $(document).ready(function(){
 		} else if (tempValue == "Google Analytics Analysis"){
 			$(".requestSection").hide();
 			$("#googleAnalytics").show();	
+		} else if (tempValue == "CRM Analytics Analysis"){
+			$(".requestSection").hide();
+			$("#crmAnalytics").show();	
+
 		} else if (tempValue == "Social Posts"){
 			$(".requestSection").hide();
 			$("#socialPosts").show();	
