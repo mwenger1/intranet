@@ -238,7 +238,7 @@ if(count($_POST) > 0){
 	<div id="googleAnalytics" class="requestSection">
 	 	<p>Note:
 			<ul>
-				<li>All Google Analytics analysis is conducted on Fridays. Be sure to schedule appropriately.</li>
+				<li>All Google Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> by end of day Friday.</li>
 				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
 				<li>What segment are you looking to analyze? (traffic from a custom url? visitors to a specific page?)</li>
 				<li>What conversions are important to look at (donations, email signups)?</li>
@@ -462,15 +462,20 @@ if(count($_POST) > 0){
 
 <!-- CUSTOM TRACKING URL -->
 	<div id="customTrackingRequest" class="requestSection">
-		<p>Note:
-			<ul>
-				<li>Don't use a vanity url. Only use original website url.</li>
-				<li>Make sure to select the right options so that your link can properly be tracked in Google Analytics.</li>
-<!-- 				<li>Always test your new url in a browser to make sure it works.</li> -->
-				<li>To review Tracking URLs already created, visit our <a href="https://docs.google.com/spreadsheet/ccc?key=0AqfOPE4JePo1dEdDbGREdTJDQ3MzR05TZGI0WGRuWkE#gid=0" target="_blank">Google Doc</a>.</li>
-			</ul>
+		<p>Steps
+			<ol>
+				<li>Open the <a href="https://docs.google.com/spreadsheet/ccc?key=0AqfOPE4JePo1dEdDbGREdTJDQ3MzR05TZGI0WGRuWkE#gid=0" target="_blank">Custom Tracking Google Doc</a>.</li>
+				<li>Scroll to the bottom of the excel and add your information in the last row.
+				<li>Important things to note
+					<ul>
+						<li>Don't use a vanity url. Only use original website url.</li>
+						<li>Make sure to select the preset options in the spreadsheet.</li>
+						<li>Always test your new url in a browser to make sure it works.</li>
+					</ul>
+				</li>
+			</ol>
 		</p>
-			<select name="trackingSource" id="trackingSource">
+<!-- 			<select name="trackingSource" id="trackingSource">
 				<option>Source</option>
 				<option value="cpc">cpc</option>
 				<option value="cpm">cpm</option>
@@ -553,7 +558,7 @@ if(count($_POST) > 0){
 			<br>
 			<p>Your link is:<br>
 			<span id="finalTrackingLink">Not ready yet. You need to fill in all of the fields above.</span>
-			</p>
+			</p> -->
 
 	</div>
 
