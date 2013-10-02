@@ -14,9 +14,9 @@ if(count($_POST) > 0){
 			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. "\n";
 			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
 			if ($write2File){
-				echo "wrote to file";
+				// echo "wrote to file";
 			} else {
-				echo "didnt write to file";
+				// echo "didnt write to file";
 			}
 			
 			break;
@@ -33,9 +33,9 @@ if(count($_POST) > 0){
 			$output .= "---------------------------\n\n\n\n";
 			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
 			if ($write2File){
-				echo "wrote to file";
+				// echo "wrote to file";
 			} else {
-				echo "didnt write to file";
+				// echo "didnt write to file";
 			}
 			
 			break;
@@ -120,7 +120,7 @@ if(count($_POST) > 0){
 		</p>
 			<form action="" method="post">
 			www.michaeljfox.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
-			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:2em;">NOTE: Paste entire url & check it works</span><br/>
+			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
 			<input type="hidden" name="hiddenfield" value="vanityURL" /> 
 			<input type="submit" value="Add Vanity URL" />
 
@@ -129,19 +129,41 @@ if(count($_POST) > 0){
 
 
 <!-- VANITY URL -->
-	<div id="blogPost" class="requestSection">
-	 	<p>Steps to get started:
+	<div id="blogPost" class="requestSection" >
+	 	<h3>If you have access to the Content Managment System (CMS):</h3>
 			<ol>
-				<li>Write your post in a word document.</li>
-				<li>Email word document to <a href="mailto:sstartz@michaeljfox.org">Stephanie Startz</a></li>
-				<li>If your post is going to include an image, make sure it is high quality and attach it in your email.</li>
-				<li>If timing is important, make sure to include that in your email to Stephanie</li>
+				<li>Follow <a href="#">Blog Best Practices</a> and <a href="http://50.57.35.97/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
+				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and add your post</a></li>				
+				<li>Be sure to preview your post on the website by clicking the preview button.</li>
+				<li>Tag the post using the appropriate taxonmy terms.</a></li>
+				<li>Use <a href="http://croply.com/" target="_blank">crop.ly</a> to edit image dimensions. NOTE: images should be 636px wide x 339px height.</li>
+				<li>Email Stephanie when your post is ready to be published on the site.
+					<ul>
+						<li>Include in email if timing is important. NOTE: Posts are published at 9am, 12pm and 3pm.
+						</li>
+					</ul>
+				</li>
+
 			</ol>
-		</p>
+
+
+	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
+			<ol>
+				<li>Follow <a href="#">Blog Best Practices</a></li>
+				<li>Write your post in a word document and email to <a href="mailto:sstartz@michaeljfox.org?subject='Adding a New Blog Post'">Stephanie Startz</a></li>
+				<li>If your post is going to include an image, make sure it is high quality and attach it in your email.</li>
+				<li>If timing is important, make sure to include that in your email to Stephanie
+					<ul>
+						<li>Include in email if timing is important. NOTE: Posts are published at 9am, 12pm and 3pm.
+						</li>
+					</ul>
+				</li>
+			</ol>
+		
 	</div>
 
 <!-- IMAGE -->
-	<div id="createImage" class="requestSection">
+	<div id="createImage" class="requestSection" >
 	 	<p>To create a custom image, email <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> and provide as much information as possible. Things to think about include:
 			<ol>
 				<li>Do you already have an image that can be used and modified?</li>
@@ -213,14 +235,22 @@ if(count($_POST) > 0){
 	</div>
 
 <!-- CALENDAR REQUEST -->
-	<div id="calendarRequest" class="requestSection">
-		<p>Note:
+	<div id="calendarRequest" class="requestSection" >
+	 	<h3>If you have access to the Content Managment System (CMS):</h3>
 			<ul>
-				<li>The sooner we can get an event on the calendar, the earlier people will know about it.</li>
-				<li>All events will be added on Fridays. You can followup with <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> if there are any issues.</li>
+				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and follow these <a href="http://50.57.35.97/files/WebsiteEvents_development.pdf" target="_blank">Step by Step Instructions</a></li>
+				<li>Remember, the sooner you add your event to the calendar, the earlier people will know about it.</li>
+				<li>If your event requires a registration form or if you have any issues, contact <a href="#">Hannah Oppenheimer</a>.</li>
 			</ul>
-		</p>
-			<form action="" method="post">
+
+	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
+			<ul>
+				<li>
+					Adding events in the CMS yourself is quick and easy. If you think you might be adding more events in the future, contact <a href="#">Mike Wenger</a> to create a CMS account and get instructions.</li>
+				<li>If you would like the Digital Strategy Team to add the event, fill in the form below.</li>
+				<li>New events will be added every Friday and you can contact <a href="#">Hannah Oppenheiemr</a> if you have any issues.</li>
+			</ul>
+			<form action="" method="post" >
 				<input type="text" name="eventName" placeholder="Event Name" class="mt1" required/><br>
 				<label>Date:</label>
 				<input type="date" placeholder="Date" name="eventDate" required /><br>
@@ -242,7 +272,7 @@ if(count($_POST) > 0){
 
 <!-- NEW PAGE REQUEST -->
 	<div id="newPageRequest" class="requestSection">
-		<p>To create a new page for the website, set up a half-hour meeting with either Hannah Oppenheimer or Michael Wenger.</p>
+		<p>To create a new page for the website, set up a half-hour meeting with either Hannah Oppenheimer and Michael Wenger.</p>
 		<p>Some things to think about before the meeting:
 			<ul>
 				<li>It takes 3-5 days to put together a single landing page. 1-2 weeks to create several pages (or a mini-site). Schedule appropriately.</li>

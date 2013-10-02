@@ -4,6 +4,14 @@ body{
 	padding:0;
 	background: #010508 url(http://www.michaeljfox.org/images/body-bg.gif) top repeat;
 }
+a, a:visited,a:active {
+	color:#F77F00;
+}
+a:hover {
+	color:#395C70;
+}
+
+
 .bold{
 	font-weight:bold;
 }
@@ -21,6 +29,14 @@ input[type='text']{
 	width:250px;
 }
 
+form{
+	margin-left: 40px;
+}
+
+li {
+	margin: 0.4em 0;
+}
+
 .footer{
 	border-top:1px solid #ccc;
 	height:20px;
@@ -30,15 +46,18 @@ input[type='text']{
 	padding:1em 2em;
 }
 .requestSection{
-	margin-bottom:2em;
-	border-top:1px solid #333;
-	margin-top: 1em;
+	margin-bottom: 3em;
+	border-top: 1px solid #333;
+	margin-top: 2em;
 }
 .error{
 	color:red;
 }
 .mt1 {
 	margin-top:1em !important;
+}
+.mt2 {
+	margin-top:2em !important;
 }
 .ml1 {
 	margin-left:1em !important;
@@ -106,6 +125,10 @@ input[type=submit]:hover, .orangeBtn:hover {
 
 h1{
 	margin-top:0;
+}
+
+a.orangeBtn:visited{
+	color:white;
 }
 
 a{
