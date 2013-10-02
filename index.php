@@ -91,19 +91,30 @@ if(count($_POST) > 0){
 				<p>Hi <span id="submitterName" class="bold">Mike</span>! What can the Digital Strategy team do for you today?</p>
 				<select name="requestType" id="requestType">
 					<option value="">Select</option>
-					<option value="Blog Post">Add a Blog Post</option>
-					<option value="Event on Calendar">Add Event on Calendar</option>
-					<option value="New Web Page">Add New Web Page</option>
-					<option value="Vanity URL">Add Vanity URL</option>
-					<option value="Bug Discovered">Bug Discovered on Site</option>
-					<option value="Check on Status">Check on Status of Submitted Request</option>
-					<option value="Custom Tracking URL">Create Custom Tracking URL</option>
-					<option value="Designed Image">Designed Image (ex: Fox Foto Friday)</option>
-					<option value="Edit text">Edit Text on Website</option>
-					<option value="FTF Analytics Analysis">Fox Trial Finder Analysis</option>
-					<option value="Google Analytics Analysis">Google Analytics Analysis</option>
-					<option value="Send out Email">Send out Email</option>
-					<option value="Social Posts">Send out Social Posts</option>
+						<optgroup label="Update Website">
+							<option value="Blog Post">Add a Blog Post</option>
+							<option value="Event on Calendar">Add Event on Calendar</option>
+							<option value="New Web Page">Add New Web Page</option>
+							<option value="Designed Image">Create Designed Image (ex: Fox Foto Friday)</option>
+							<option value="Edit text">Edit Text/Information on a Page</option>
+							<option value="Bug Discovered">Bug Discovered on Website</option>
+						</optgroup>
+						<optgroup label="Analysis & Special Tracking">
+							<option value="Vanity URL">Create a Vanity URL</option>
+							<option value="Custom Tracking URL">Create Custom Tracking URL</option>
+							<option value="CRM Analytics Analysis">Convio/CRM Analysis</option>
+							<option value="FTF Analytics Analysis">Fox Trial Finder Analysis</option>
+							<option value="Google Analytics Analysis">Google Analytics Analysis</option>
+						</optgroup>
+						<optgroup label="Outreach">
+							<option value="Send out Email">Send out Email</option>
+							<option value="Social Posts">Send out Social Posts</option>
+						</optgroup>
+						<optgroup label="Issues">
+							<option value="Check on Status">Check on Status of Submitted Request</option>
+							<option value="Not Sure">Other</option>
+						</optgroup>
+
 
 				</select>
 			</div>
