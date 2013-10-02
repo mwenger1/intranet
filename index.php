@@ -50,9 +50,9 @@ if(count($_POST) > 0){
 			$subject = $_POST["priority"] . " - " . $_POST["bugname"];
 			 
 			if($_POST["priority"] == "Major"){
-				$to = array('to' => 'michaelwenger27@gmail.com', 'cc' =>  'mwenger@michaeljfox.org');
+				$to = array('to' => 'cases@michaeljfox.fogbugz.com', 'cc' =>  'mwenger@michaeljfox.org', 'cc' =>  'mwenger@openaction.org');
 			} else {
-				$to = "michaelwenger27@gmail.com"; //cases@michaeljfox.fogbugz.com
+				$to = "cases@michaeljfox.fogbugz.com"; //cases@michaeljfox.fogbugz.com
 			}
 
 			$from = $_POST["fromemail"];
@@ -61,7 +61,7 @@ if(count($_POST) > 0){
 			$message .= $_POST["bugdescription"];
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should get a confirmation email to your inbox that provides the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email from us once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -121,9 +121,9 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
+							<option value="Bug Discovered">Bug Discovered on Website</option>
 							<option value="Designed Image">Create Designed Image (ex: Fox Foto Friday)</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
-							<option value="Bug Discovered">Bug Discovered on Website</option>
 						</optgroup>
 						<optgroup label="Analysis & Special Tracking">
 							<option value="Vanity URL">Create a Vanity URL</option>
