@@ -26,7 +26,7 @@ $(document).ready(function(){
 					$("#requestOptionsError").html("");
 				} else{
 					$("#requestOptions").hide();
-					$("#requestOptionsError").show().html("This email is not valid. Make sure you use @michaeljfox.org. If you are a new employee, email <a href='mailto:mwenger@michaeljfox.org'>mwenger@michealjfox.org</a> to add your name to the list.");
+					$("#requestOptionsError").show().html("This email is not valid. Make sure you use @michaeljfox.org. If you are a new employee, email <a href='mailto:mwenger@michaeljfox.org' style='color:#395C70;''>mwenger@michaeljfox.org</a> to add your name to the list.");
 				}
 			}
 		}
