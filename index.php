@@ -3,6 +3,8 @@ $formSubmitted = false;
 
 if(count($_POST) > 0){
 	$formSubmitted = true;
+	include('email.php');
+
 	// echo "form is submitting";
 	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
 	$submitMessage = "";
@@ -32,18 +34,20 @@ if(count($_POST) > 0){
 			$output .= "Description: " . $_POST["eventDescription"] . "\n";
 			$output .= "---------------------------\n\n\n\n";
 			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
-			if ($write2File){
-				// echo "wrote to file";
-			} else {
-				// echo "didnt write to file";
-			}
+
+			$to = "michaelwenger27@gmail.com";
+			$from = "mwenger@michaeljfox.org";
+			$subject = "mwenger@openaction.org";
+			$message = "the function worked magically when adding an event";
+			
+			sendMessage($to,$from,$subject,$message)
 			
 			break;
 
 
 		
 		default:
-			$submitMessage = "Sorry. Your form did not submit. Try again or contact Mike Wenger to report this problem.";
+			$submitMessage = "Sorry. Your form did not submit. Try again or contact <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to report this problem.";
 			break;
 	};
 
@@ -306,6 +310,7 @@ if(count($_POST) > 0){
 <!-- BUG REQUEST -->
 	<div id="bugRequest" class="requestSection">
 		<p>Bugs happen and thanks for your help in finding one.</p>
+		
 		<p>Email <a href="mailto:cases@michaeljfox.fogbugz.com">cases@michaeljfox.fogbugz.com</a> to report the issue. In your email, be sure to:
 			<ul>
 				<li>Succinctly explain the problem in the subject line along with how critical the issue is.</li>
