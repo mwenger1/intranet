@@ -50,7 +50,7 @@ if(count($_POST) > 0){
 			$subject = $_POST["priority"] . " - " . $_POST["bugname"];
 			 
 			if($_POST["priority"] == "Major"){
-				$to = array('to' => 'cases@michaeljfox.fogbugz.com', 'cc' =>  'mwenger@michaeljfox.org', 'cc' =>  'mwenger@openaction.org');
+				$to = array('to' => 'cases@michaeljfox.fogbugz.com', 'cc' =>  'mwenger@michaeljfox.org');
 			} else {
 				$to = "cases@michaeljfox.fogbugz.com"; //cases@michaeljfox.fogbugz.com
 			}
