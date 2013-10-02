@@ -61,9 +61,9 @@ if(count($_POST) > 0){
 			$message .= $_POST["bugdescription"];
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$output = "Your request was successfully submitted. You should get a confirmation email to your inbox that provides the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted. You should get a confirmation email to your inbox that provides the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
-				$output = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
