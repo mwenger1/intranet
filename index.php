@@ -121,7 +121,6 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
-							<option value="Bug Discovered">Bug Discovered on Website</option>
 							<option value="Designed Image">Create Designed Image (ex: Fox Foto Friday)</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
 						</optgroup>
@@ -136,7 +135,8 @@ if(count($_POST) > 0){
 							<option value="Send out Email">Send out Email</option>
 							<option value="Social Posts">Send out Social Posts</option>
 						</optgroup>
-						<optgroup label="Issues">
+						<optgroup label="Issues & Status">
+							<option value="Bug Discovered">Bug Discovered on Website</option>
 							<option value="Check on Status">Check on Status of Submitted Request</option>
 							<option value="Not Sure">Other</option>
 						</optgroup>
@@ -192,7 +192,7 @@ if(count($_POST) > 0){
 			</ol>
 	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
 			<ol>
-				<li>Email the blogger for your team
+				<li>Email the blogger for your department
 					<ul>
 						<li>Lauren Anderson (Development)</li>
 						<li>Liz Diemer (Team Fox)</li>
@@ -344,7 +344,7 @@ if(count($_POST) > 0){
 		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
 		<form action="" method="post" >
 			
-			<input type="text" placeholder="Succinctly Describe the Bug" style="width:400px;" class="mb1" name="bugname"/>
+			<input type="text" placeholder="Briefly Describe the Bug" style="width:400px;" class="mb1" name="bugname"/>
 			<br>
 
 			<select name="priority" class="mb1">
@@ -408,9 +408,18 @@ if(count($_POST) > 0){
 
 <!-- CHECK ON CASE -->
 	<div id="fogbugzRequest" class="requestSection">
-		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation.</p>
-		<p>To check on the status of a particular task, retrieve the case number from the automatic email response when you first sent your request to <a href="mailto:cases@michaeljfox.fogbugz.com">cases@michaeljfox.fogbugz.com</a>. <a href="https://michaeljfox.fogbugz.com/default.asp" target="_blank">Login to Fogugz</a> using:<br>username: foxtrialfinder.analytics@gmail.com<br>pw:FoxBugs32</p>
-		<p>Enter your case number and learn more about the status of your request. Should you run into issues, contact <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> for more info.</p>
+		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation. Requests are called cases. When one of your cases is completed, you will automatically be notified by email.</p>
+		<p>If you want to check on the status of an open case, click on the link that was in the automated email response from cases@michaeljfox.fogbugz.com OR if you know your case ID number, you can fill it in on <a href="https://michaeljfox.fogbugz.com/default.asp?pg=pgPublicViewForm" target="_blank">Fogbugz</a>.</p>
+		<p>If you want to see how your case is prioritized relative to other requests coming from your department, click on your department below: <span style="font-weight:bold; font-style-italic;">NOTE: THIS FEATURS IS COMING SOON</span>
+			<li><a href="#">Administration</a></li>
+			<li><a href="#">Development</a></li>
+			<li><a href="#">MarComm</a></li>
+			<li><a href="#">Research Props</a></li>
+			<li><a href="#">Research Partnerships</a></li>
+			<li><a href="#">Research Partnerships</a></li>
+			<li><a href="#">Team Fox</a></li>
+
+		</p>
 	</div>	
 
 
