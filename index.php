@@ -30,14 +30,14 @@ if(count($_POST) > 0){
 			$subject = "Event: " . $_POST["eventName"];
 			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];			
-			$message .= "Date: " . $_POST["eventDate"] . "\n";
-			$message .= "Start: " . $_POST["eventStartTime"] . "\n";
-			$message .= "End: " . $_POST["eventEndTime"] . "\n";
-			$message .= "Description: " . $_POST["eventDescription"] . "\n";
+			$message .= "Date: " . $_POST["eventDate"] . "<br>";
+			$message .= "Start: " . $_POST["eventStartTime"] . "<br>";
+			$message .= "End: " . $_POST["eventEndTime"] . "<br>";
+			$message .= "Description: " . $_POST["eventDescription"] . "<br>";
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your event (" . $_POST["eventName"] . ")  was successfully submitted and will be added to the calendar in the next few days. You will receive a confirmation email in the next few moments. If you want to followup on this request, reply to that email.";
+				$submitMessage = "Your event (" . $_POST["eventName"] . ")  was successfully submitted and will be added to the calendar in the next few days. You will receive a confirmation email in the next few moments. If you want to followup on this request, reply to the confirmation email.";
 			} else{
 				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
