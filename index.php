@@ -8,7 +8,7 @@ if(count($_POST) > 0){
 	// echo "form is submitting";
 	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
 	$submitMessage = "";
-	
+	$message = "";
 
 	switch($_POST["hiddenfield"]) {
 		case 'vanityURL':
@@ -39,7 +39,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your event (" . $_POST["eventName"] . ")  was successfully submitted and will be added to the calendar in the next few days. You will receive a confirmation email in the next few moments. If you want to followup on this request, reply to the confirmation email.";
 			} else{
-				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 
 			
@@ -56,7 +56,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
-				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -73,10 +73,52 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
-				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
+
+		case 'googleAnalytics':
+			$subject = "Analytics: Google: ";
+			$to = "cases@michaeljfox.fogbugz.com";
+			$from = $_POST["fromemail"];
+			$message .= $_POST["analysisdescription"];
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+		case 'ftfAnalytics':
+			$subject = "Analytics: FTF: ";
+			$to = "cases@michaeljfox.fogbugz.com";
+			$from = $_POST["fromemail"];
+			$message .= $_POST["analysisdescription"];
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+		case 'crmAnalytics':
+			$subject = "Analytics: CRM: ";
+			$to = "nmarino@michaeljfox.org";
+			$from = $_POST["fromemail"];
+			$message .= $_POST["analysisdescription"];
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your analytics request was successfully submitted to Nico Marino. He will followup with timing on when it will be ready.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
 		
 		default:
 			$submitMessage = "Sorry. Your form did not submit. Try again or contact <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to report this problem.";
@@ -241,21 +283,21 @@ if(count($_POST) > 0){
 
 		<form action="" method="post" >
 			
-			<input type="url" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl"/>
+			<input type="url" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl" required />
 			<br>
 
-			<select name="priority" class="mb1">
+			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
 				<option value="Major">Time Sensitive - Needs to update as soon as possible.</option>
 				<option value="Minor">Not Critical - Update when there is time.</option>
 			</select>
 			<br>
 
-			<textarea name="originaltext" cols="80" rows="8" placeholder="Copy and paste the original text."></textarea>
+			<textarea name="originaltext" cols="80" rows="8" placeholder="Copy and paste the original text." required ></textarea>
 
 			<br>
 
-			<textarea name="newtext" cols="80" rows="8" placeholder="Paste the new text that will take its place."></textarea>
+			<textarea name="newtext" cols="80" rows="8" placeholder="Paste the new text that will take its place." required ></textarea>
 
 			<br>
 			<input type="hidden" name="fromemail" value="" />
@@ -280,7 +322,7 @@ if(count($_POST) > 0){
 		</p>
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
-			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
+			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea>
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -300,8 +342,8 @@ if(count($_POST) > 0){
 		</p>
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
-			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
-			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
+			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
+			<input type="hidden" name="hiddenfield" value="ftfAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
 			</form>
@@ -323,7 +365,7 @@ if(count($_POST) > 0){
 		</p>
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
-			<textarea cols="70" rows="20" required placeholder="Be sure to give as much information as possible"></textarea>
+			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
 			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -357,15 +399,15 @@ if(count($_POST) > 0){
 				<li>To add your event, fill in the form below.</li>
 			</ul>
 			<form action="" method="post" >
-				<input type="text" name="eventName" placeholder="Event Name" class="mt1" required/><br>
+				<input type="text" name="eventName" placeholder="Event Name" class="mt1" required /><br>
 				<label>Date:</label>
 				<input type="date" placeholder="Date" name="eventDate" required /><br>
 				<label for="startTime">Start Time</label>
-				<input type="time" id="startTime" class="mt1" name="eventStartTime" required/>
+				<input type="time" id="startTime" class="mt1" name="eventStartTime" required />
 				<label for="endTime">End Time</label>
 				<input type="time" id="endTime" class="mt1" name="eventEndTime" />
 				<br>
-				<textarea placeholder="Event Description" cols="70" rows="20" class="mt1" name="eventDescription" required></textarea>
+				<textarea placeholder="Event Description" cols="70" rows="20" class="mt1" name="eventDescription" required ></textarea>
 				<br>
 <!-- 				<label>Logo or Image</label><input type="file" />
 				<br>	-->
@@ -408,10 +450,10 @@ if(count($_POST) > 0){
 		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
 		<form action="" method="post" >
 			
-			<input type="text" placeholder="Briefly Describe the Bug" style="width:400px;" class="mb1" name="bugname"/>
+			<input type="text" placeholder="Briefly Describe the Bug" style="width:400px;" class="mb1" name="bugname" required />
 			<br>
 
-			<select name="priority" class="mb1">
+			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
 				<option value="Major">Critical - Affects Majority of Users. Functionality not working.</option>
 				<option value="Medium">Medium - Affects Some Users. Fix When We Can.</option>
@@ -419,9 +461,9 @@ if(count($_POST) > 0){
 			</select>
 			<br>
 
-			<input type="url" name="bugurl" placeholder="Website URL for where the bug was discovered" style="width:400px;" class="mb1"/>
+			<input type="url" name="bugurl" placeholder="Website URL for where the bug was discovered" style="width:400px;" class="mb1" required />
 			<br>
-			<select name="bugbrowser" class="mb1">
+			<select name="bugbrowser" class="mb1" required>
 				<option>Browser Used</option>
 					<optgroup label="Internet Explorer">
 						<option value="ie10">Internet Explorer 10</option>
@@ -449,7 +491,7 @@ if(count($_POST) > 0){
 
 			</select>
 			<br>
-			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug."></textarea>
+			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug." required ></textarea>
 
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="bugrequest" />
