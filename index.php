@@ -241,7 +241,7 @@ if(count($_POST) > 0){
 
 		<form action="" method="post" >
 			
-			<input type="text" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl"/>
+			<input type="url" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl"/>
 			<br>
 
 			<select name="priority" class="mb1">
