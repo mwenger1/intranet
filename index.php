@@ -323,6 +323,7 @@ if(count($_POST) > 0){
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea>
+			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -343,6 +344,7 @@ if(count($_POST) > 0){
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
+			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="ftfAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -366,6 +368,7 @@ if(count($_POST) > 0){
 			<form action="" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
+			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
