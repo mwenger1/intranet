@@ -89,7 +89,7 @@ if(count($_POST) > 0){
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Digital Strategy Form</title>
+        <title>Digital Strategy Forms</title>
         <link rel="stylesheet" href="css/form.css">
         <script src="js/vendor/jquery.js"></script>
         <script src="js/form.js"></script>
@@ -98,7 +98,7 @@ if(count($_POST) > 0){
 	<div class="container">
 	<div id="header">
 		<img src="https://www.michaeljfox.org/images/mjff-logo.gif" style="width: 200px;" />
-    	<h1>Digital Strategy Request</h1>
+    	<h1>Digital Strategy Requests</h1>
     </div>	
 <?php
 	if ($formSubmitted){
