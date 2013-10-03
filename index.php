@@ -46,7 +46,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = $_POST["priority"] . " - " . $_POST["bugname"];
+			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
 			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br>";
@@ -54,7 +54,24 @@ if(count($_POST) > 0){
 			$message .= $_POST["bugdescription"];
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email from us once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+
+		case 'edittext':
+			$subject = "Edit: " . $_POST["priority"] . ": ";
+			$to = "cases@michaeljfox.fogbugz.com";
+			$from = $_POST["fromemail"];
+			$message .= "URL: " . $_POST["editurl"] . "<br>";
+			$message .= "Original: " . $_POST["originaltext"] . "<br>";
+			$message .= "Replacement: " . $_POST["newtext"] . "<br>";
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -219,12 +236,34 @@ if(count($_POST) > 0){
 
 <!-- EDIT TEXT -->
 	<div id="editText" class="requestSection">
-		<p>Whether there is a typo, a stat needs to be updated, or we want to reword content on the site, email <a href="mailto:cases@michaeljfox.fogbugz.com">cases@michaeljfox.fogbugz.com</a> to report the issue. In your email, be sure to:
-			<ul>
-				<li>Include the website URL where the text is.</li>
-				<li>The original text, and what the new text should be</li>
-			</ul>
-		</p>
+		<p>Whether there is a typo, a stat needs to be updated, or you want to reword something, fill in the form below.</p>
+		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
+
+		<form action="" method="post" >
+			
+			<input type="text" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl"/>
+			<br>
+
+			<select name="priority" class="mb1">
+				<option>Choose a Priority</option>
+				<option value="Major">Time Sensitive - Needs to update as soon as possible.</option>
+				<option value="Minor">Not Critical - Update when there is time.</option>
+			</select>
+			<br>
+
+			<textarea name="originaltext" cols="80" rows="8" placeholder="Copy and paste the original text."></textarea>
+
+			<br>
+
+			<textarea name="newtext" cols="80" rows="8" placeholder="Paste the new text that will take its place."></textarea>
+
+			<br>
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="hiddenfield" value="edittext" />
+			<input type="submit" value="Submit Your Text Edit" />
+		</form>
+
+
 	</div>
 
 <!-- GOOGLE ANALYTICS -->
