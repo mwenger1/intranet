@@ -30,10 +30,10 @@ if(count($_POST) > 0){
 			$subject = "Event: " . $_POST["eventName"];
 			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];			
-			$message .= "Date: " . $_POST["eventDate"] . "<br>";
-			$message .= "Start: " . $_POST["eventStartTime"] . "<br>";
-			$message .= "End: " . $_POST["eventEndTime"] . "<br>";
-			$message .= "Description: " . $_POST["eventDescription"] . "<br>";
+			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
+			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
+			$message .= "End: " . $_POST["eventEndTime"] . "<br><br>";
+			$message .= "Description: " . $_POST["eventDescription"] . "<br><br>";
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
@@ -49,8 +49,8 @@ if(count($_POST) > 0){
 			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
 			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
-			$message = "Browser: " . $_POST["bugbrowser"] . "<br>";
-			$message .= "URL: " . $_POST["bugurl"] . "<br>";
+			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
+			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
@@ -65,9 +65,9 @@ if(count($_POST) > 0){
 			$subject = "Edit: " . $_POST["priority"] . ": ";
 			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
-			$message .= "URL: " . $_POST["editurl"] . "<br>";
-			$message .= "Original: " . $_POST["originaltext"] . "<br>";
-			$message .= "Replacement: " . $_POST["newtext"] . "<br>";
+			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
+			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
+			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
