@@ -26,35 +26,28 @@ if(count($_POST) > 0){
 			break;
 
 		case 'addevent':
-			$submitMessage .= "You're event (" . $_POST["eventName"] . ") has been submitted and will be added to the calendar this Friday. Followup with <a href='mailto:hoppenheimer@michaeljfox.org'>Hannah Oppenheimer</a> if you have any issues.";
 
-			$fileName = "create-event.txt";
-			$output = $_POST["eventName"] . "\n";
-			$output .= "Date: " . $_POST["eventDate"] . "\n";
-			$output .= "Start: " . $_POST["eventStartTime"] . "\n";
-			$output .= "End: " . $_POST["eventEndTime"] . "\n";
-			$output .= "Description: " . $_POST["eventDescription"] . "\n";
-			$output .= "---------------------------\n\n\n\n";
-			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
+			$subject = "Event: " . $_POST["eventName"];
+			$to = "cases@michaeljfox.fogbugz.com";
+			$from = $_POST["fromemail"];			
+			$message .= "Date: " . $_POST["eventDate"] . "\n";
+			$message .= "Start: " . $_POST["eventStartTime"] . "\n";
+			$message .= "End: " . $_POST["eventEndTime"] . "\n";
+			$message .= "Description: " . $_POST["eventDescription"] . "\n";
 
-			$to = "michaelwenger27@gmail.com";
-			$from = "mwenger@michaeljfox.org";
-			$subject = "mwenger@openaction.org";
-			$message = "the function worked magically when adding an event";
-			
 			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your event (" . $_POST["eventName"] . ")  was successfully submitted and will be added to the calendar in the next few days. You will receive a confirmation email in the next few moments. If you want to followup on this request, reply to that email.";
+			} else{
+				$submitMessage = "Your request can not be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+
 			
 			break;
 
 		case 'bugrequest':
 			$subject = $_POST["priority"] . " - " . $_POST["bugname"];
-			 
-			if($_POST["priority"] == "Major"){
-				$to = array('to' => 'cases@michaeljfox.fogbugz.com', 'cc' =>  'mwenger@michaeljfox.org');
-			} else {
-				$to = "cases@michaeljfox.fogbugz.com"; //cases@michaeljfox.fogbugz.com
-			}
-
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br>";
@@ -165,7 +158,7 @@ if(count($_POST) > 0){
 	</div>
 
 
-<!-- VANITY URL -->
+<!-- BLOG POST -->
 	<div id="blogPost" class="requestSection" >
 	 	<h3>If you have access to the Content Managment System (CMS):</h3>
 			<ol>	
@@ -317,15 +310,12 @@ if(count($_POST) > 0){
 			<ul>
 				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and follow these <a href="http://50.57.35.97/files/WebsiteEvents_development.pdf" target="_blank">Step by Step Instructions</a></li>
 				<li>Remember, the sooner you add your event to the calendar, the earlier people will know about it.</li>
-				<li>If your event requires a registration form or if you have any issues, contact <a href="#">Hannah Oppenheimer</a>.</li>
+				<li>If your event requires a registration form, contact <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a>.</li>
 			</ul>
 
 	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
 			<ul>
-				<li>
-					Adding events in the CMS yourself is quick and easy. If you think you might be adding more events in the future, contact <a href="#">Mike Wenger</a> to create a CMS account and get instructions.</li>
-				<li>If you would like the Digital Strategy Team to add the event, fill in the form below.</li>
-				<li>New events will be added every Friday and you can contact <a href="#">Hannah Oppenheiemr</a> if you have any issues.</li>
+				<li>To add your event, fill in the form below.</li>
 			</ul>
 			<form action="" method="post" >
 				<input type="text" name="eventName" placeholder="Event Name" class="mt1" required/><br>
@@ -340,7 +330,7 @@ if(count($_POST) > 0){
 				<br>
 <!-- 				<label>Logo or Image</label><input type="file" />
 				<br>	-->
-
+				<input type="hidden" name="fromemail" value="" />
 				<input type="hidden" name="hiddenfield" value="addevent" />
 				<input type="submit" value="Add Your Event" /> 
 			</form>
