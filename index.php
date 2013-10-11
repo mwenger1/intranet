@@ -303,7 +303,7 @@ if(count($_POST) > 0){
 
 			<br>
 			<label for="file1">Upload File (optional):</label>
-			<input type="file" name="attachment" id="file1"><span>&nbsp;(jpg, png, doc, docx, pdf)<br>
+			<input type="file" name="attachment" id="file1"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
 			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="edittext" />
