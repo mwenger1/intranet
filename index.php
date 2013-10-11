@@ -15,7 +15,7 @@ if(count($_POST) > 0){
 			$submitMessage .= "You're Vanity URL has successfully been submitted and will be available starting this Friday.<br><br>www.michaeljfox.org/<span class='bold'>" . $_POST["vanityAddress"] . "</span> will point to:<br><a href='" . $_POST["vanityPointer"] . "'>" . $_POST["vanityPointer"] . "</a><br><br><span class='bold'>NOTE:</span> Make sure that the URL above points to a working page. If any issues, you can followup with <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a>.";
 
 			$fileName = "vanityurls.txt";
-			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. "\n";
+			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. " #" . $_POST["fromemail"] .  "\n";
 			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
 			if ($write2File){
 				// echo "wrote to file";
@@ -233,6 +233,7 @@ if(count($_POST) > 0){
 			<form action="" enctype="multipart/form-data" method="post">
 			www.michaeljfox.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
 			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
+			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="vanityURL" /> 
 			<input type="submit" value="Add Vanity URL" />
 
@@ -609,99 +610,26 @@ if(count($_POST) > 0){
 				</li>
 			</ol>
 		</p>
-<!-- 			<select name="trackingSource" id="trackingSource">
-				<option>Source</option>
-				<option value="cpc">cpc</option>
-				<option value="cpm">cpm</option>
-				<option value="display_ad">display_ad</option>
-				<option value="email">email</option>
-				<option value="link">link</option>
-				<option value="press_release">press_release</option>
-				<option value="qrcode">qrcode</option>
-				<option value="signature">signature</option>
-				<option value="social">social</option>
-				<option value="tfsocial">tfsocial</option>
-				<option value="website">website</option>
-			</select>
 
-			<select name="trackingMedium" id="trackingMedium">
-				<option>Medium</option>
-				<option value="adwords_grant">adwords_grant</option>
-				<option value="adwords_paid">adwords_paid</option>
-				<option value="blog">blog</option>
-				<option value="blogher">blogher</option>
-				<option value="email">email</option>
-				<option value="email_foxflash">email_foxflash</option>
-				<option value="email_friend">email_friend</option>
-				<option value="email_link">email_link</option>
-				<option value="email_welcome">email_welcome</option>
-				<option value="facebook">facebook</option>
-				<option value="general">general</option>
-				<option value="googleplus">googleplus</option>
-				<option value="linkedin">linkedin</option>
-				<option value="mobile">mobile</option>
-				<option value="monthly">monthly</option>
-				<option value="neurotalk">neurotalk</option>
-				<option value="newsletter">newsletter</option>
-				<option value="pinterest">pinterest</option>
-				<option value="popup">popup</option>
-				<option value="press_release">press_release</option>
-				<option value="signature">signature</option>
-				<option value="storify">storify</option>
-				<option value="twitter">twitter</option>
-				<option value="website">website</option>
-				<option value="youtube">youtube</option>
-			</select>
-
-			<select name="trackingCampaign" id="trackingCampaign">
-				<option>Campaign</option>
-
-				<optgroup label="General">
-					<option value="thinkable">thinkable</option>
-					<option value="michaeljfoxshow">michaeljfoxshow</option>
-					<option value="solicitation">solicitation</option>
-					<option value="patientprofile">patientprofile</option>
-				</optgroup>
-
-				<optgroup label="Research Partnerships">
-					<option value="foxtrialfinder">foxtrialfinder</option>
-					<option value="hottopics">hottopics</option>
-					<option value="ppmi">ppmi</option>
-					<option value="smellsurvey">smellsurvey</option>
-				</optgroup>
-
-				<optgroup label="Team Fox">
-					<option value="chicagomarathon">chicagomarathon</option>
-					<option value="chicagoyps">chicagoyps</option>
-					<option value="foxfotofriday">foxfotofriday</option>
-					<option value="marathon2013">marathon2013</option>
-					<option value="newyorkyps">newyorkyps</option>
-					<option value="noagelimitforteamfox">noagelimitforteamfox</option>
-					<option value="sanfranciscoyps">sanfranciscoyps</option>
-					<option value="summerseries">summerseries</option>
-					<option value="teamfoxathlete">teamfoxathlete</option>
-					<option value="teamfoxevent">teamfoxevent</option>
-					<option value="teamfoxmember">teamfoxmember</option>
-					<option value="teamfoxmemberinterview">teamfoxmemberinterview</option>
-					<option value="torontomarathon">torontomarathon</option>
-				</optgroup>
-			</select>
-
-			<input type="text" placeholder="Particular Content's Name" name="trackingSpecificCampaign" id="trackingSpecificCampaign" /><br>
-			<input type="url" name="trackingURL" id="trackingURL" style="width:460px;" placeholder="Website URL" />
-			<br>
-			<p>Your link is:<br>
-			<span id="finalTrackingLink">Not ready yet. You need to fill in all of the fields above.</span>
-			</p> -->
 
 	</div>
 
-
+<!-- SEND OUT EMAIL -->
 	<div id="emailRequest" class="requestSection">
+		<h3>Sending Out an Email</h3>
 		<p>Steps:</p>
 		<ol>
 			<li>Add email to the MJFF Email Calendar in Outlook one week prior to delivery.</li>
 			<li>Fill in this <a href="mailto:cases@michaeljfox.fogbugz.com?subject=Email Request&body=Subject Line:%0D%0A%0D%0AAudience:%0D%0A%0D%0A%0D%0A%0D%0ASuppression:%0D%0A%0D%0A%0D%0A%0D%0AImage: (if available, attach to this email)%0D%0A%0D%0A%0D%0A%0D%0AEmail Content: %0D%0A%0D%0A"> email template</a> the day before delivery by 2pm.</li>
+			<li>Identify the email template you will use. There is:
+				<ul>
+					<li><a href="https://www.michaeljfox.org/files/Breaking News Email Template.png" target="_blank">Breaking News Email Template</a></li>
+					<li><a href="https://www.michaeljfox.org/files/Standard Template.png" target="_blank">Standard Template</a></li>
+					<li><a href="https://www.michaeljfox.org/files/ThinkAble Template.png" target="_blank">ThinkAble Template</a></li>
+
+				</ul>
+			</li>
+
 		</ol>
 		
 
