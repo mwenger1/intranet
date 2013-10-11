@@ -1,4 +1,6 @@
 <?php
+require_once ('config/config.php');
+
 $formSubmitted = false;
 
 if(count($_POST) > 0){
@@ -6,7 +8,7 @@ if(count($_POST) > 0){
 	include('email.php');
 
 	// echo "form is submitting";
-	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
+	
 	$submitMessage = "";
 	$message = "";
 
@@ -14,9 +16,9 @@ if(count($_POST) > 0){
 		case 'vanityURL':
 			$submitMessage .= "You're Vanity URL has successfully been submitted and will be available starting this Friday.<br><br>www.michaeljfox.org/<span class='bold'>" . $_POST["vanityAddress"] . "</span> will point to:<br><a href='" . $_POST["vanityPointer"] . "'>" . $_POST["vanityPointer"] . "</a><br><br><span class='bold'>NOTE:</span> Make sure that the URL above points to a working page. If any issues, you can followup with <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a>.";
 
-			$fileName = "vanityurls.txt";
+			$fileName = "submissions/vanityurls.txt";
 			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. " #" . $_POST["fromemail"] .  "\n";
-			$write2File = file_put_contents ($filePath.$fileName,$output,FILE_APPEND | LOCK_EX);
+			$write2File = file_put_contents ($FILEPATH.$fileName,$output,FILE_APPEND | LOCK_EX);
 			if ($write2File){
 				// echo "wrote to file";
 			} else {
@@ -28,7 +30,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "Event: " . $_POST["eventName"];
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -47,12 +49,12 @@ if(count($_POST) > 0){
 
 		case 'bugrequest':
 			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
-			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+			$attachment = true;
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -65,14 +67,14 @@ if(count($_POST) > 0){
 
 		case 'imagemacro':
 			$subject = "MACRO: " . $_POST["imagetype"] . ": ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
 			$message .= "Other Dimensions: " . $otherdimensions . "<br><br>";
 			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
 
-			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+			$attachment = true;
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -84,13 +86,13 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "Edit: " . $_POST["priority"] . ": ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
-			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+			$attachment = true;
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -103,7 +105,7 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "Analytics: Google: ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
@@ -117,7 +119,7 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "Analytics: FTF: ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = $PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 

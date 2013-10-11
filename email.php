@@ -1,7 +1,7 @@
 <?php
 		// BEGIN PREPERATION OF EMAIL
 
-	function checkAttachment($filePath){
+	function checkAttachment(){
 		$allowedExts = array("gif", "jpeg", "jpg", "png","pdf","doc","docx");
 		$temp = explode(".", $_FILES["attachment"]["name"]);
 		$extension = end($temp);
@@ -35,7 +35,7 @@
 		    else
 		      {
 		      move_uploaded_file($_FILES["attachment"]["tmp_name"],"upload/" . $_FILES["attachment"]["name"]);
-		      return "/home/mikewenger/mbwenger.com/digital_strategy_form/upload/" . $_FILES["attachment"]["name"];
+		      return $FILEPATH . "/upload/" . $_FILES["attachment"]["name"];
 		      }
 		    }
 		  }
@@ -53,7 +53,7 @@
 		require_once ('config/amazonlogin.php');
 
 		if ($attachment){
-			$successfulAttachment = checkAttachment($attachment);
+			$successfulAttachment = checkAttachment();
 			if ($successfulAttachment){
 				$sentEmail = Email::send($to, $from, $subject, $message, $successfulAttachment);
 			}

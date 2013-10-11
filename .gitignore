@@ -2,3 +2,4 @@
 *.txt
 /upload/*
 /submissions/*
+config/*
