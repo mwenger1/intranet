@@ -262,7 +262,15 @@ if(count($_POST) > 0){
 						</li>
 					</ul>
 				</li>
-				<li>Helpful Resources: <a href="#">Blog Best Practices</a> and <a href="https://www.michaeljfox.org/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
+				<li>Helpful Resources: 
+					<ul>
+						<li><a target="_blank" href="https://www.michaeljfox.org/files/10 questions to help you write better headlines _ Poynter.pdf">10 Questions to Write Better Posts</a></li>
+						<li><a target="_blank" href="https://www.michaeljfox.org/files/Blog Posting Steps.pdf">Blog Best Practices</a></li>
+						<li><a target="_blank" href="https://www.michaeljfox.org/files/The Michael J Fox Foundation Blog - GUIDELINES.pdf">Posting Guidelines</a></li>
+						<li><a href="https://www.michaeljfox.org/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
+
+					</ul>
+				</li>
 
 			</ol>
 	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
@@ -276,7 +284,6 @@ if(count($_POST) > 0){
 						<li>Stephanie Startz (Digital Strategy)</li>
 					</ul>
 				</li>
-				<li>Helpful Resources: <a href="#">Blog Best Practices</a></li>
 			</ol>
 		
 	</div>
