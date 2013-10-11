@@ -502,10 +502,10 @@ if(count($_POST) > 0){
 			</select>
 			<br>
 			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug." required ></textarea>
-
+			<br>
 			<label for="file2">Upload Screenshot of Issue (optional):</label>
 			<input type="file" name="attachment" id="file2"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
-
+			<br>
 
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="bugrequest" />
