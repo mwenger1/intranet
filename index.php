@@ -52,7 +52,9 @@ if(count($_POST) > 0){
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
-			sendMessage($to,$from,$subject,$message);
+			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+
+			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
 				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
@@ -500,6 +502,10 @@ if(count($_POST) > 0){
 			</select>
 			<br>
 			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug." required ></textarea>
+
+			<label for="file2">Upload Screenshot of Issue (optional):</label>
+			<input type="file" name="attachment" id="file2"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
+
 
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="bugrequest" />
