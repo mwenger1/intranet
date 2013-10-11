@@ -302,7 +302,7 @@ if(count($_POST) > 0){
 			<br>
 			<div style="display:none;" id="hiddenMacroDimensions">
 			
-				<input type="text" placeholder="What dimensions are you looking for" style="width:400px;" class="mb1" name="macrootherdimensions" required /><br>
+				<input type="text" placeholder="What dimensions are you looking for" style="width:400px;" class="mb1" name="macrootherdimensions" /><br>
 			</div>
 
 
