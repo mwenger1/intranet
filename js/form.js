@@ -99,22 +99,14 @@ $(document).ready(function(){
 
 	});
 
-	/* VANITY URL TRACKING = Dynamically Generate Link */
-    $("select[name=trackingSource],select[name=trackingMedium],select[name=trackingCampaign],input[name=trackingSpecificCampaign],input[name=trackingURL").change(function(){
-	    var source = $("select[name=trackingSource]").val();
-	    var medium = $("select[name=trackingMedium]").val();
-	    var campaign = $("select[name=trackingCampaign]").val();
-	    var specificCampaign = $("input[name=trackingSpecificCampaign]").val();
-	    var url = $("input[name=trackingURL").val().trim();
-
-	    if (source == "Source" || medium == "Medium" || campaign == "Campaign" || specificCampaign == "" || url == ""){
-	        $("#finalTrackingLink").html("Not ready yet. You need to fill in all of the fields above.");
-	    } else{
-	    	if (url.indexOf("?") == -1){
-    			url = url + "?";
-    		}
-			finalURL = url + "&utm_source=" + source + "&utm_medium=" + medium + "&utm_content=" + campaign + "&utm_campaign=" + specificCampaign + "&s_src=" + specificCampaign + "&s_subsrc=" + medium;
-			$("#finalTrackingLink").html("<a target='_blank' href='" + finalURL + "'>" + finalURL + "</a><br><br>Make sure it works before using!");
-	    }
+	$("select[name=imagetype]").change(function(){
+		var tmp = $(this).val();
+		if (tmp == "other"){
+			$("#hiddenMacroDimensions").slideDown();
+		} else{
+			$("#hiddenMacroDimensions").hide();
+		}
 	})
+
+
 });

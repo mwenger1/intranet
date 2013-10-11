@@ -63,6 +63,25 @@ if(count($_POST) > 0){
 			break;
 
 
+		case 'imagemacro':
+			$subject = "MACRO: " . $_POST["imagetype"] . ": ";
+			$to = "cases@michaeljfox.fogbugz.com";
+			$from = $_POST["fromemail"];
+			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
+			$message .= "Other Dimensions: " . $otherdimensions . "<br><br>";
+			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
+			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
+
+			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+
+			sendMessage($to,$from,$subject,$message,$attachment);
+			if (sendMessage){
+				$submitMessage = "Your request to create an image macro was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
 		case 'edittext':
 			$subject = "Edit: " . $_POST["priority"] . ": ";
 			$to = "cases@michaeljfox.fogbugz.com";
@@ -177,7 +196,7 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
-							<option value="Designed Image">Create Designed Image (ex: Fox Foto Friday)</option>
+							<option value="Designed Image">Create Image Macro</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
 						</optgroup>
 						<optgroup label="Analysis & Special Tracking">
@@ -264,19 +283,42 @@ if(count($_POST) > 0){
 
 <!-- IMAGE -->
 	<div id="createImage" class="requestSection" >
-	 	<p>To create a custom image, email <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a> with as much information as possible.</p>
-	 	<p>Things to think about and include:
-			<ol>
-				<li>Do you already have an image that can be used and modified? (attache these to your email)</li>
-				<li>What are the dimensions of the images?</li>
-				<li>Where will the image be used?</li>
-				<li>Do you already have an image that can be used and modified?</li>
-				<li>When do you need the image by? NOTE: Images are time intensive. Try to give at least 3 days notice</li>
 
-			</ol>
-		</p>
-		<p><span style="font-weight:bold; font-style-italic;">NOTE: <span style="text-transform:lowercase;">COMING SOON, THIS WORKFLOW WILL BE REPLACED BY AN ONLINE FORM ON THIS PAGE</span></span>
-		<p>
+		<h3>Creating an Image Macro</h3>
+		<p>Image macros are a combination of text and background imagery. The key to image macros is having enough blank space to fit text. Zoomed in images of people's faces is not ideal as there is nowhere to place the text</p>
+		<form action="" enctype="multipart/form-data" method="post" >
+
+			<label for="file1">Upload Image for Macro (jpg, png, gif):</label>
+			<input type="file" name="attachment" id="file1"> <br>
+			<br>
+			<select name="imagetype" class="mb1" required>
+				<option>Select purpose</option>
+				<option value="blog">Blog (636px x 339px)</option>
+				<option value="facebook">Facebook (800px x 800px)</option>
+				<option value="instagram">Instagram (800px x 800px)</option>
+				<option value="homepage">Homepage Banner (1000px x 280px)</option>
+				<option value="other">Other</option>
+			</select>
+			<br>
+			<div style="display:none;" id="hiddenMacroDimensions">
+			
+				<input type="text" placeholder="What dimensions are you looking for" style="width:400px;" class="mb1" name="macrootherdimensions" required /><br>
+			</div>
+
+
+
+		
+
+			<input type="text" placeholder="Text to go over macro. Keep it short!" style="width:400px;" class="mb1" name="macrotext" required />
+			<br>
+			<input type="text" placeholder="Due date (optional)" style="width:400px;" class="mb1" name="macroduedate"  />
+			<br>
+
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="hiddenfield" value="imagemacro" />
+			<input type="submit" value="Submit Your Macro" />
+		</form>
+
 	</div>
 
 
