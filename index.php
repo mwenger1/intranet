@@ -6,7 +6,7 @@ if(count($_POST) > 0){
 	include('email.php');
 
 	// echo "form is submitting";
-	$filePath = "/home/mikewenger/mbwenger.com/test/submissions/";
+	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
 	$submitMessage = "";
 	$message = "";
 
@@ -28,7 +28,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "Event: " . $_POST["eventName"];
-			$to = "michaelwenger27@gmail.com";
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -47,7 +47,7 @@ if(count($_POST) > 0){
 
 		case 'bugrequest':
 			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
-			$to = "michaelwenger27@gmail.com";
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
@@ -63,7 +63,7 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "Edit: " . $_POST["priority"] . ": ";
-			$to = "michaelwenger27@gmail.com";
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
@@ -82,7 +82,7 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "Analytics: Google: ";
-			$to = "michaelwenger27@gmail.com";
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
@@ -96,7 +96,7 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "Analytics: FTF: ";
-			$to = "michaelwenger27@gmail.com";
+			$to = "cases@michaeljfox.fogbugz.com";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 

@@ -35,7 +35,7 @@
 		    else
 		      {
 		      move_uploaded_file($_FILES["attachment"]["tmp_name"],"upload/" . $_FILES["attachment"]["name"]);
-		      return "/home/mikewenger/mbwenger.com/test/upload/" . $_FILES["attachment"]["name"];
+		      return "/home/mikewenger/mbwenger.com/digital_strategy_form/upload/" . $_FILES["attachment"]["name"];
 		      }
 		    }
 		  }
