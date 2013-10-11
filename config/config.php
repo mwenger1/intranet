@@ -1,4 +1,4 @@
 <?php
-define('FILEPATH', '/home/mikewenger/mbwenger.com/digital_strategy_form/');
-define('PRIMARY_EMAIL', 'cases@michaeljfox.fogbugz.com');
+define('FILEPATH', '/home/mikewenger/mbwenger.com/test/');
+define('PRIMARY_EMAIL', 'michaelwenger27@gmail.com');
 ?>
