@@ -35,7 +35,7 @@
 		    else
 		      {
 		      move_uploaded_file($_FILES["attachment"]["tmp_name"],"upload/" . $_FILES["attachment"]["name"]);
-		      $fullTmpPath = $FILEPATH . "/upload/" . $_FILES["attachment"]["name"];
+		      $fullTmpPath = FILEPATH . "/upload/" . $_FILES["attachment"]["name"];
 		      echo $fullTmpPath;
 		      return $fullTmpPath;
 		      }

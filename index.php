@@ -18,7 +18,7 @@ if(count($_POST) > 0){
 
 			$fileName = "submissions/vanityurls.txt";
 			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. " #" . $_POST["fromemail"] .  "\n";
-			$write2File = file_put_contents ($FILEPATH.$fileName,$output,FILE_APPEND | LOCK_EX);
+			$write2File = file_put_contents (FILEPATH.$fileName,$output,FILE_APPEND | LOCK_EX);
 			if ($write2File){
 				// echo "wrote to file";
 			} else {
@@ -30,7 +30,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "Event: " . $_POST["eventName"];
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -49,7 +49,7 @@ if(count($_POST) > 0){
 
 		case 'bugrequest':
 			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
@@ -67,7 +67,7 @@ if(count($_POST) > 0){
 
 		case 'imagemacro':
 			$subject = "MACRO: " . $_POST["imagetype"] . ": ";
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
 			$message .= "Other Dimensions: " . $otherdimensions . "<br><br>";
@@ -86,7 +86,7 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "Edit: " . $_POST["priority"] . ": ";
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
@@ -105,7 +105,7 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "Analytics: Google: ";
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
@@ -119,7 +119,7 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "Analytics: FTF: ";
-			$to = $PRIMARY_EMAIL;
+			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
