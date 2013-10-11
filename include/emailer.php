@@ -75,7 +75,7 @@ class Email {
 	 * @param   boolean       send email as HTML
 	 * @return  integer       number of emails sent
 	 */
-	public static function send($to, $from, $subject, $message, $html = TRUE)
+	public static function send($to, $from, $subject, $message, $attachment = FALSE, $html = TRUE)
 	{
         $recipientCount = 0;
         try{
@@ -152,6 +152,14 @@ class Email {
     			// From with a name
     			$message->setFrom($from[0], $from[1]);
     		}
+
+            if ($attachment){
+                $file = $_FILES["attachment"]["tmp_name"]; //"attachment" is the name of your input field, "tmp_name" gets the temporary path to the uploaded file.
+                $filename = $_FILES["attachment"]["name"];
+                    // From without a name
+                $message->attach(new Swift_Message_Attachment(new Swift_File($file), $filename));
+            
+            }
     
     		$recipientCount = Email::$mail->send($message);
         }catch (Swift_TransportException $e){
