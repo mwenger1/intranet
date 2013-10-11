@@ -47,7 +47,7 @@
 	}
 
 
-	function sendMessage($to,$from,$subject,$message,$attachment){	
+	function sendMessage($to,$from,$subject,$message,$attachment=false){	
 
 		require_once ('include/emailer.php');
 		require_once ('config/amazonlogin.php');
