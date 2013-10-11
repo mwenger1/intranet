@@ -6,7 +6,7 @@ if(count($_POST) > 0){
 	include('email.php');
 
 	// echo "form is submitting";
-	$filePath = "/home/mikewenger/mbwenger.com/digital_strategy_form/submissions/";
+	$filePath = "/home/mikewenger/mbwenger.com/test/submissions/";
 	$submitMessage = "";
 	$message = "";
 
@@ -28,7 +28,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "Event: " . $_POST["eventName"];
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -47,7 +47,7 @@ if(count($_POST) > 0){
 
 		case 'bugrequest':
 			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
@@ -63,13 +63,15 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "Edit: " . $_POST["priority"] . ": ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
-			sendMessage($to,$from,$subject,$message);
+			$attachment = $_FILES["file"]["tmp_name"] . $_FILES["attachment"]["name"];
+
+			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
 				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
 			} else{
@@ -80,7 +82,7 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "Analytics: Google: ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
@@ -94,7 +96,7 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "Analytics: FTF: ";
-			$to = "cases@michaeljfox.fogbugz.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
 
@@ -207,7 +209,7 @@ if(count($_POST) > 0){
 				<li>Vanity URLs are case sensitive. Always use lowercase characters when promoting in print.</li>
 			</ul>
 		</p>
-			<form action="" method="post">
+			<form action="" enctype="multipart/form-data" method="post">
 			www.michaeljfox.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
 			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
 			<input type="hidden" name="hiddenfield" value="vanityURL" /> 
@@ -281,7 +283,7 @@ if(count($_POST) > 0){
 		<p>Whether there is a typo, a stat needs to be updated, or you want to reword something, fill in the form below.</p>
 		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
 
-		<form action="" method="post" >
+		<form action="" enctype="multipart/form-data" method="post" >
 			
 			<input type="url" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl" required />
 			<br>
@@ -299,6 +301,9 @@ if(count($_POST) > 0){
 
 			<textarea name="newtext" cols="80" rows="8" placeholder="Paste the new text that will take its place." required ></textarea>
 
+			<br>
+			<label for="file1">Upload File (optional):</label>
+			<input type="file" name="attachment" id="file1"><span>&nbsp;(jpg, png, doc, docx, pdf)<br>
 			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="hiddenfield" value="edittext" />
@@ -320,7 +325,7 @@ if(count($_POST) > 0){
 				<li>If this is information you will want on a regular basis (weekly, monthly), let us know so we can set up a custom report that automatically gets emailed to you.</li>
 			</ul>
 		</p>
-			<form action="" method="post">
+			<form action="" enctype="multipart/form-data" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea>
 			<input type="hidden" name="fromemail" value="" />
@@ -341,7 +346,7 @@ if(count($_POST) > 0){
 				<li>What timeline are you looking to analyze (past week, this month compared to the same time last year)?</li>
 			</ul>
 		</p>
-			<form action="" method="post">
+			<form action="" enctype="multipart/form-data" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
@@ -365,7 +370,7 @@ if(count($_POST) > 0){
 				<li>What timeline are you looking to analyze (past week, this month compared to the same time last year)?</li>
 			</ul>
 		</p>
-			<form action="" method="post">
+			<form action="" enctype="multipart/form-data" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
@@ -401,7 +406,7 @@ if(count($_POST) > 0){
 			<ul>
 				<li>To add your event, fill in the form below.</li>
 			</ul>
-			<form action="" method="post" >
+			<form action="" enctype="multipart/form-data" method="post" >
 				<input type="text" name="eventName" placeholder="Event Name" class="mt1" required /><br>
 				<label>Date:</label>
 				<input type="date" placeholder="Date" name="eventDate" required /><br>
@@ -451,7 +456,7 @@ if(count($_POST) > 0){
 <!-- BUG REQUEST -->
 	<div id="bugRequest" class="requestSection">
 		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
-		<form action="" method="post" >
+		<form action="" enctype="multipart/form-data" method="post" >
 			
 			<input type="text" placeholder="Briefly Describe the Bug" style="width:400px;" class="mb1" name="bugname" required />
 			<br>

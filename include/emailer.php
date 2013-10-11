@@ -154,10 +154,13 @@ class Email {
     		}
 
             if ($attachment){
-                $file = $_FILES["attachment"]["tmp_name"]; //"attachment" is the name of your input field, "tmp_name" gets the temporary path to the uploaded file.
-                $filename = $_FILES["attachment"]["name"];
+                // $file = $_FILES["attachment"]["tmp_name"]; //"attachment" is the name of your input field, "tmp_name" gets the temporary path to the uploaded file.
+                // $filename = $_FILES["attachment"]["name"];
                     // From without a name
-                $message->attach(new Swift_Message_Attachment(new Swift_File($file), $filename));
+                // $filename = "vanityurls.txt";
+                // $file = $filePath . $filename;
+                $message->attach(Swift_Attachment::fromPath($attachment));
+                // $message->attach(new Swift_Message_Attachment(new Swift_File($file), $filename));
             
             }
     
