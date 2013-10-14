@@ -602,16 +602,7 @@ if(count($_POST) > 0){
 	<div id="fogbugzRequest" class="requestSection">
 		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation. Requests are called cases. When one of your cases is completed, you will automatically be notified by email.</p>
 		<p>If you want to check on the status of an open case, click on the link that was in the automated email response from cases@michaeljfox.fogbugz.com OR if you know your case ID number, you can fill it in on <a href="https://michaeljfox.fogbugz.com/default.asp?pg=pgPublicViewForm" target="_blank">Fogbugz</a>.</p>
-		<p>If you want to see how your case is prioritized relative to other requests coming from your department, click on your department below: <span style="font-weight:bold; font-style-italic;">NOTE: THIS FEATURE IS COMING SOON</span>
-			<li><a href="#">Administration</a></li>
-			<li><a href="#">Development</a></li>
-			<li><a href="#">MarComm</a></li>
-			<li><a href="#">Research Props</a></li>
-			<li><a href="#">Research Partnerships</a></li>
-			<li><a href="#">Research Partnerships</a></li>
-			<li><a href="#">Team Fox</a></li>
-
-		</p>
+		<p>If you want to see how your case is prioritized relative to other requests coming from your department, email <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a>.</p>
 	</div>	
 
 
