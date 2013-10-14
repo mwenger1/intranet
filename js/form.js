@@ -109,7 +109,6 @@ function identifySubmitter(email){
 		var tmpDept = staff[department];
 		for (var tmpEmail in tmpDept) {
 			if (tmpEmail == email){
-				console.log('this ran');
 				personArray = [];
 				personArray[0] = staff[department][tmpEmail];
 				personArray[1] = department;
@@ -117,7 +116,6 @@ function identifySubmitter(email){
 				
 				return personArray;
 			}else{
-				console.log("not a match");
 			}
 		}
 	}
@@ -125,7 +123,6 @@ return false;
 
 }
 var person = identifySubmitter("mwenger@michaeljfox.org");
-console.log(person);
 
 $(document).ready(function(){
 	$(".requestSection").hide();
