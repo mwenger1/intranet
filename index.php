@@ -55,7 +55,7 @@ if(count($_POST) > 0){
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
 
-			$attachment = false;	
+			$attachment = true;	
 			if(isset($_POST["attachment"])){
 				$attachment = true;	
 			} 
@@ -78,7 +78,7 @@ if(count($_POST) > 0){
 			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = true;	
 			if(isset($_POST["attachment"])){
 				$attachment = true;	
 			} 
@@ -99,7 +99,7 @@ if(count($_POST) > 0){
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = true;	
 			if(isset($_POST["attachment"])){
 				$attachment = true;	
 			} 
