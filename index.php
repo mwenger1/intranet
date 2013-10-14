@@ -54,7 +54,11 @@ if(count($_POST) > 0){
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
-			$attachment = true;
+
+			$attachment = false;	
+			if(isset($_POST["attachment"])){
+				$attachment = true;	
+			} 
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -74,7 +78,10 @@ if(count($_POST) > 0){
 			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
 
-			$attachment = true;
+			$attachment = false;	
+			if(isset($_POST["attachment"])){
+				$attachment = true;	
+			} 
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -92,7 +99,10 @@ if(count($_POST) > 0){
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
-			$attachment = true;
+			$attachment = false;	
+			if(isset($_POST["attachment"])){
+				$attachment = true;	
+			} 
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
