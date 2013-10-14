@@ -29,7 +29,7 @@ if(count($_POST) > 0){
 
 		case 'addevent':
 
-			$subject = "Event: " . $_POST["department"] . ": " . $_POST["eventName"];
+			$subject = "EVENT: " . $_POST["department"] . ": " . $_POST["eventName"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
@@ -48,7 +48,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = "Bug: " . $_POST["department"] . ": ". $_POST["priority"] . ": " . $_POST["bugname"];
+			$subject = "BUG: " . $_POST["department"] . ": ". $_POST["priority"] . ": " . $_POST["bugname"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
@@ -85,7 +85,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'edittext':
-			$subject = "Edit: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
+			$subject = "EDIT: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
@@ -104,7 +104,7 @@ if(count($_POST) > 0){
 
 
 		case 'googleAnalytics':
-			$subject = "Analytics: Google: " . $_POST["department"] . ": ";
+			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
@@ -118,7 +118,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'ftfAnalytics':
-			$subject = "Analytics: FTF: " . $_POST["department"] . ": ";
+			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
@@ -132,7 +132,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'crmAnalytics':
-			$subject = "Analytics: CRM: " . $_POST["department"] . ": ";
+			$subject = "ANALYTICS: CRM: " . $_POST["department"] . ": ";
 			$to = "nmarino@michaeljfox.org";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
