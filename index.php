@@ -56,7 +56,7 @@ if(count($_POST) > 0){
 			$message .= $_POST["bugdescription"];
 
 			$attachment = false;	
-			if(isset($_POST["attachment"])){
+			if(file_exists($_FILES["attachment"]["tmp_name"])){
 				$attachment = true;	
 			} 
 
@@ -79,7 +79,7 @@ if(count($_POST) > 0){
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
 
 			$attachment = false;	
-			if(isset($_POST["attachment"])){
+			if(file_exists($_FILES["attachment"]["tmp_name"])){
 				$attachment = true;	
 			} 
 
@@ -100,7 +100,7 @@ if(count($_POST) > 0){
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
 			$attachment = false;	
-			if(isset($_POST["attachment"])){
+			if(file_exists($_FILES["attachment"]["tmp_name"])){
 				$attachment = true;	
 			} 
 
