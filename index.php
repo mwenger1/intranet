@@ -642,8 +642,8 @@ if(count($_POST) > 0){
 		<p>Steps:</p>
 		<ol>
 			<li>Add email to the MJFF Email Calendar in Outlook one week prior to delivery.</li>
-			<li>Fill in this <a href="mailto:cases@michaeljfox.fogbugz.com?subject=Email Request&body=Subject Line:%0D%0A%0D%0AAudience:%0D%0A%0D%0A%0D%0A%0D%0ASuppression:%0D%0A%0D%0A%0D%0A%0D%0AImage: (if available, attach to this email)%0D%0A%0D%0A%0D%0A%0D%0AEmail Content: %0D%0A%0D%0A"> email template</a> the day before delivery by 2pm.</li>
-			<li>Identify the email template you will use. There is:
+			<li>Fill in this <a href="mailto:cases@michaeljfox.fogbugz.com?subject=Email Request&body=Subject Line:%0D%0A%0D%0AAudience:%0D%0A%0D%0A%0D%0A%0D%0ASuppression:%0D%0A%0D%0A%0D%0A%0D%0AImage: (if available, attach to this email)%0D%0A%0D%0A%0D%0A%0D%0AEmail Content: %0D%0A%0D%0A"> email template</a> the day before delivery by 2pm and click send.</li>
+			<li>For reference, we have three different email templages we use:
 				<ul>
 					<li><a href="https://www.michaeljfox.org/files/Breaking News Email Template.png" target="_blank">Breaking News Email Template</a></li>
 					<li><a href="https://www.michaeljfox.org/files/Standard Template.png" target="_blank">Standard Template</a></li>
