@@ -356,8 +356,10 @@ if(count($_POST) > 0){
 
 			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
-				<option value="Major">Time Sensitive - Needs to update as soon as possible.</option>
-				<option value="Minor">Not Critical - Update when there is time.</option>
+				<option value="Major">Time Sensitive - Need to update as soon as possible.</option>
+				<option value="Medium">Lets update sooner rather than later.</option>
+
+				<option value="Minor">No rush. Get to when there is time.</option>
 			</select>
 			<br>
 
