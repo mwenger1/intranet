@@ -29,7 +29,7 @@ if(count($_POST) > 0){
 
 		case 'addevent':
 
-			$subject = "Event: " . $_POST["eventName"];
+			$subject = "Event: " . $_POST["department"] . ": " . $_POST["eventName"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];			
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
@@ -48,7 +48,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = "Bug: " . $_POST["priority"] . ": " . $_POST["bugname"];
+			$subject = "Bug: " . $_POST["department"] . ": ". $_POST["priority"] . ": " . $_POST["bugname"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
@@ -66,7 +66,7 @@ if(count($_POST) > 0){
 
 
 		case 'imagemacro':
-			$subject = "MACRO: " . $_POST["imagetype"] . ": ";
+			$subject = "MACRO: " . $_POST["department"] . ": " . $_POST["imagetype"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
@@ -85,7 +85,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'edittext':
-			$subject = "Edit: " . $_POST["priority"] . ": ";
+			$subject = "Edit: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
@@ -104,7 +104,7 @@ if(count($_POST) > 0){
 
 
 		case 'googleAnalytics':
-			$subject = "Analytics: Google: ";
+			$subject = "Analytics: Google: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
@@ -118,7 +118,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'ftfAnalytics':
-			$subject = "Analytics: FTF: ";
+			$subject = "Analytics: FTF: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
@@ -132,7 +132,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'crmAnalytics':
-			$subject = "Analytics: CRM: ";
+			$subject = "Analytics: CRM: " . $_POST["department"] . ": ";
 			$to = "nmarino@michaeljfox.org";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["analysisdescription"];
@@ -236,6 +236,7 @@ if(count($_POST) > 0){
 			www.michaeljfox.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
 			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="vanityURL" /> 
 			<input type="submit" value="Add Vanity URL" />
 
@@ -325,6 +326,7 @@ if(count($_POST) > 0){
 			<br>
 
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="imagemacro" />
 			<input type="submit" value="Submit Your Macro" />
 		</form>
@@ -360,6 +362,7 @@ if(count($_POST) > 0){
 			<input type="file" name="attachment" id="file1"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
 			<br>
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="edittext" />
 			<input type="submit" value="Submit Your Text Edit" />
 		</form>
@@ -383,6 +386,7 @@ if(count($_POST) > 0){
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea>
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -404,6 +408,7 @@ if(count($_POST) > 0){
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="ftfAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -428,6 +433,7 @@ if(count($_POST) > 0){
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
 			<input type="submit" value="Request Analysis" />
 
@@ -474,6 +480,7 @@ if(count($_POST) > 0){
 <!-- 				<label>Logo or Image</label><input type="file" />
 				<br>	-->
 				<input type="hidden" name="fromemail" value="" />
+				<input type="hidden" name="department" value="" />
 				<input type="hidden" name="hiddenfield" value="addevent" />
 				<input type="submit" value="Add Your Event" /> 
 			</form>
@@ -560,6 +567,7 @@ if(count($_POST) > 0){
 			<br>
 
 			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="bugrequest" />
 			<input type="submit" value="Submit Your Bug" />
 		</form>

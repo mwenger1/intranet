@@ -1,9 +1,129 @@
 function identifySubmitter(email){
-	var emails = {"mwenger@michaeljfox.org":"Mike","lfreeman@michaeljfox.org":"Laura", "amartig@michaeljfox.org":"Adria", "alee@michaeljfox.org":"Alan", "ageldmacher@michaeljfox.org":"Alexandra", "awoodhouse@michaeljfox.org":"Alexandra", "aurkowitz@michaeljfox.org":"Alison", "awhite@michaeljfox.org":"Annesha", "acrowther@michaeljfox.org":"Ashleigh", "blong@michaeljfox.org":"Brennan", "bfiske@michaeljfox.org":"Brian", "cbrdey@michaeljfox.org":"Christina", "cmeunier@michaeljfox.org":"Claire", "cmarshall@michaeljfox.org":"Claudia", "cgeddes@michaeljfox.org":"Colleen", "dherron@michaeljfox.org":"Damaris", "dbrooks@michaeljfox.org":"Debi", "dking@michaeljfox.org":"Dina", "ejoyce@michaeljfox.org":"Elizabeth", "eamanfu@michaeljfox.org":"Eric", "fpaulino@michaeljfox.org":"Felix", "gleung@michaeljfox.org":"Gary", "gallen@michaeljfox.org":"Gloria", "gqadri@michaeljfox.org":"Gloria", "haskew@michaeljfox.org":"Haley", "hnazardejaucourt@michaeljfox.org":"Hallie Nazar de", "hoppenheimer@michaeljfox.org":"Hannah", "hteichholtz@michaeljfox.org":"Holly", "jeberling@michaeljfox.org":"Jamie", "jrice@michaeljfox.org":"Jason", "jmartz@michaeljfox.org":"Joanne", "jweinstein@michaeljfox.org":"Josh", "kwimberly@michaeljfox.org":"K.L.", "krivera@michaeljfox.org":"Katherine", "kvestuto@michaeljfox.org":"Kathleen", "kforsberg@michaeljfox.org":"Katie", "ckopil@michaeljfox.org":"Katie", "kpeabody@michaeljfox.org":"Katie", "kkubota@michaeljfox.org":"Ken", "kbrown@michaeljfox.org":"Kimberly", "kmilliron@michaeljfox.org":"Kristen", "kpate@michaeljfox.org":"Kristin", "klopez@michaeljfox.org":"Kristina", "Kdave@michaeljfox.org":"Kuldip", "ldallepazze@michaeljfox.org":"Laura Dalle", "landerson@michaeljfox.org":"Lauren", "lwordham@michaeljfox.org":"Laxmi", "lfleisch@michaeljfox.org":"Leslie", "lcappelletti@michaeljfox.org":"Lily", "ediemer@michaeljfox.org":"Liz", "lvincent@michaeljfox.org":"Lona", "llong@michaeljfox.org":"Lura", "lkaur@michaeljfox.org":"Luvleen", "lherron@michaeljfox.org":"Lydia", "mrao@michaeljfox.org":"Madhavi", "mmcguire@michaeljfox.org":"Maggie", "mbaptista@michaeljfox.org":"Marco", "mfrasier@michaeljfox.org":"Mark", "mfacheris@michaeljfox.org":"Maurizio", "Mhaupt@michaeljfox.org":"Meredith", "mgolombuski@michaeljfox.org":"Michele B.", "maquino@michaeljfox.org":"Michelle", "nherpich@michaeljfox.org":"Nate", "nlaffir@michaeljfox.org":"Nazreen", "njeffers@michaeljfox.org":"Nicholas", "nmarino@michaeljfox.org":"Nicolas", "nkelleners@michaeljfox.org":"Nicole", "nwillis@michaeljfox.org":"Nicole", "pradford@michaeljfox.org":"Patricia", "rbulmer@michaeljfox.org":"Rachael", "sfox@michaeljfox.org":"Sam", "sgogolak@michaeljfox.org":"Sara", "sbarnes@michaeljfox.org":"Sarah", "skeating@michaeljfox.org":"Sean", "swalls@michaeljfox.org":"Simone", "schowdhury@michaeljfox.org":"Sohini", "sdas@michaeljfox.org":"Sonal", "spaddock@michaeljfox.org":"Stephanie", "sstartz@michaeljfox.org":"Stephanie", "sgrubb@michaeljfox.org":"Stephen", "tsherer@michaeljfox.org":"Todd", "tiacolucci@michaeljfox.org":"Toni", "tmumford@michaeljfox.org":"Tracey", "varnedo@michaeljfox.org":"Vanessa", "communicationsintern@michaeljfox.org":"Ashleigh","venos@michaeljfox.org":"Veronique"};
-	var name = emails[email];
-	return name;
-}
+	var staff = {
+		"STRATEGY":{
+			"mwenger@michaeljfox.org":"Mike",
+			"llong@michaeljfox.org":"Lura",
+			"skeating@michaeljfox.org":"Sean",
+			"lwordham@michaeljfox.org":"Laxmi",
+			"sstartz@michaeljfox.org":"Stephanie",
+			"nmarino@michaeljfox.org":"Nicolas",
+			"hoppenheimer@michaeljfox.org":"Hannah"
+		},
+		"RESPART":{
+			"ldallepazze@michaeljfox.org":"Laura Dalle",
+			"schowdhury@michaeljfox.org":"Sohini",
+			"tmumford@michaeljfox.org":"Tracey",
+			"lcappelletti@michaeljfox.org":"Lily",
+			"ejoyce@michaeljfox.org":"Elizabeth",
+			"cmeunier@michaeljfox.org":"Claire",
+			"cmarshall@michaeljfox.org":"Claudia"
+		},
+		"SENIOR":{
+			"dbrooks@michaeljfox.org":"Debi",
+			"awhite@michaeljfox.org":"Annesha",
+			"kpeabody@michaeljfox.org":"Katie",
+			"tsherer@michaeljfox.org":"Todd"
 
+		},
+		"TEAMFOX":{
+			"awoodhouse@michaeljfox.org":"Alexandra",
+			"spaddock@michaeljfox.org":"Stephanie",
+			"ediemer@michaeljfox.org":"Liz",
+			"sfox@michaeljfox.org":"Sam",
+			"klopez@michaeljfox.org":"Kristina",
+			"jrice@michaeljfox.org":"Jason"
+		},
+		"DEV":{
+			"kmilliron@michaeljfox.org":"Kristen",
+			"haskew@michaeljfox.org":"Haley",
+			"landerson@michaeljfox.org":"Lauren",
+			"lfleisch@michaeljfox.org":"Leslie",
+			"lkaur@michaeljfox.org":"Luvleen",
+			"mrao@michaeljfox.org":"Madhavi",
+			"Mhaupt@michaeljfox.org":"Meredith",
+			"mgolombuski@michaeljfox.org":"Michele B.",
+			"maquino@michaeljfox.org":"Michelle",
+			"nlaffir@michaeljfox.org":"Nazreen",
+			"njeffers@michaeljfox.org":"Nicholas",
+			"nkelleners@michaeljfox.org":"Nicole",
+			"rbulmer@michaeljfox.org":"Rachael",
+			"sgogolak@michaeljfox.org":"Sara",
+			"sbarnes@michaeljfox.org":"Sarah",
+			"swalls@michaeljfox.org":"Simone",
+			"tiacolucci@michaeljfox.org":"Toni",
+			"varnedo@michaeljfox.org":"Vanessa",
+			"venos@michaeljfox.org":"Veronique",
+			"dking@michaeljfox.org":"Dina",
+			"kpate@michaeljfox.org":"Kristin",
+			"hnazardejaucourt@michaeljfox.org":"Hallie Nazar de"
+		},
+		"ADMIN":{
+			"eamanfu@michaeljfox.org":"Eric",
+			"gleung@michaeljfox.org":"Gary",
+			"sgrubb@michaeljfox.org":"Stephen",
+			"lherron@michaeljfox.org":"Lydia",
+			"gallen@michaeljfox.org":"Gloria",
+			"gqadri@michaeljfox.org":"Gloria",
+			"cgeddes@michaeljfox.org":"Colleen",
+			"dherron@michaeljfox.org":"Damaris",
+			"lfreeman@michaeljfox.org":"Laura",
+			"fpaulino@michaeljfox.org":"Felix",
+			"jeberling@michaeljfox.org":"Jamie",
+			"alee@michaeljfox.org":"Alan",
+			"jmartz@michaeljfox.org":"Joanne",
+			"kwimberly@michaeljfox.org":"K.L.",
+			"kbrown@michaeljfox.org":"Kimberly"
+		},
+		"RESOPS":{
+			"Kdave@michaeljfox.org":"Kuldip",
+			"lvincent@michaeljfox.org":"Lona",
+			"mbaptista@michaeljfox.org":"Marco",
+			"mfrasier@michaeljfox.org":"Mark",
+			"mfacheris@michaeljfox.org":"Maurizio",
+			"nwillis@michaeljfox.org":"Nicole",
+			"pradford@michaeljfox.org":"Patricia",
+			"sdas@michaeljfox.org":"Sonal",
+			"amartig@michaeljfox.org":"Adria",
+			"acrowther@michaeljfox.org":"Ashleigh",
+			"blong@michaeljfox.org":"Brennan",
+			"bfiske@michaeljfox.org":"Brian",
+			"aurkowitz@michaeljfox.org":"Alison",
+			"ageldmacher@michaeljfox.org":"Alexandra",
+			"krivera@michaeljfox.org":"Katherine",
+			"kvestuto@michaeljfox.org":"Kathleen",
+			"kforsberg@michaeljfox.org":"Katie",
+			"ckopil@michaeljfox.org":"Katie",
+			"kkubota@michaeljfox.org":"Ken"
+		},
+		"MARCOMM":{
+			"mmcguire@michaeljfox.org":"Maggie",
+			"hteichholtz@michaeljfox.org":"Holly",
+			"cbrdey@michaeljfox.org":"Christina",
+			"communicationsintern@michaeljfox.org":"Ashleigh"
+		}
+	};
+
+	for (var department in staff){
+		var tmpDept = staff[department];
+		for (var tmpEmail in tmpDept) {
+			if (tmpEmail == email){
+				console.log('this ran');
+				personArray = [];
+				personArray[0] = staff[department][tmpEmail];
+				personArray[1] = department;
+				// personArray[1] = "STRATEGY";
+				
+				return personArray;
+			}else{
+				console.log("not a match");
+			}
+		}
+	}
+return false;
+
+}
+var person = identifySubmitter("mwenger@michaeljfox.org");
+console.log(person);
 
 $(document).ready(function(){
 	$(".requestSection").hide();
@@ -20,9 +140,10 @@ $(document).ready(function(){
 				$("#requestOptionsError").hide();
 			} else {
 				var submitterName = identifySubmitter(tmpValue);
-				if (submitterName){
-					$("#submitterName").text(submitterName);
+				if (submitterName[0]){
+					$("#submitterName").text(submitterName[0]);
 					$("input[name=fromemail]").val(tmpValue);
+					$("input[name=department]").val(submitterName[1]);
 					$("#requestOptions").show();
 					$("#requestOptionsError").html("");
 				} else{
