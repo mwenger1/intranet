@@ -145,8 +145,12 @@ if(count($_POST) > 0){
 			$subject = "ANALYTICS: CRM: " . $_POST["department"] . ": ";
 			$to = "nmarino@michaeljfox.org";
 			$from = $_POST["fromemail"];
-			$message .= $_POST["analysisdescription"];
-
+			$message .= "Name: " . $_POST["crmName"] . "<br><br>";
+			$message .= "Purpose: " . $_POST["crmPurpose"] . "<br><br>";
+			$message .= "Due Date: " . $_POST["crmDueDate"] . "<br><br>";
+			$message .= "Filters: " . $_POST["crmFilters"] . "<br><br>";
+			$message .= "Fields Included: " . $_POST["crmFieldsIncluded"] . "<br><br>";
+			$message .= "More Info: " . $_POST["analysisdescription"] . "<br><br>";
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
 				$submitMessage = "Your analytics request was successfully submitted to Nico Marino. He will followup with timing on when it will be ready.";
@@ -431,8 +435,6 @@ if(count($_POST) > 0){
 	<div id="crmAnalytics" class="requestSection">
 		<p>CRM analytics is conducted by <a href="mailto:nmarino@michaeljfox.org">Nico Marino</a>.</p>
 		<p>When you submit your request, Nico will respond with timing (based on other requests in the queue, and how intensive the report is to pull).</p>
-
-	 	<p>Things to think about:
 			<ul>
 
 				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
@@ -440,10 +442,13 @@ if(count($_POST) > 0){
 				<li>What conversions are important to look at (donations, email signups)?</li>
 				<li>What timeline are you looking to analyze (past week, this month compared to the same time last year)?</li>
 			</ul>
-		</p>
 			<form action="" enctype="multipart/form-data" method="post">
-			What are you trying to gain insight into?<br>
-			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
+			<input type="text" name="crmName" value="" placeholder="List/Analysis Name" required /> <br>
+			<input type="text" name="crmPurpose" value="" placeholder="Purpose" required /> <br>
+			<input type="text" name="crmDueDate" value="" placeholder="Preferred Due Date" required /> <br>
+			<input type="text" name="crmFilters" value="" placeholder="Filters" required /> <br>
+			<input type="text" name="crmFieldsIncluded" value="" placeholder="Fields to be Included" required /> <br>
+			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Additional information" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
