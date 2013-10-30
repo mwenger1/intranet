@@ -52,6 +52,7 @@ function identifySubmitter(email){
 			"venos@michaeljfox.org":"Veronique",
 			"dking@michaeljfox.org":"Dina",
 			"kpate@michaeljfox.org":"Kristin",
+			"hfaba@michaeljfox.org":"Hayley",
 			"hnazardejaucourt@michaeljfox.org":"Hallie Nazar de"
 		},
 		"ADMIN":{
