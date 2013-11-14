@@ -127,6 +127,20 @@ if(count($_POST) > 0){
 			}
 			break;
 
+		case 'otherDescription':
+			$subject = "OTHER: " . $_POST["department"] . ": ";
+			$to = PRIMARY_EMAIL;
+			$from = $_POST["fromemail"];
+			$message .= $_POST["otherdescription"];
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
 		case 'ftfAnalytics':
 			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
@@ -528,7 +542,18 @@ if(count($_POST) > 0){
 
 <!-- OTHER REQUEST -->
 	<div id="otherRequest" class="requestSection">
-		<p>Can't figure out which option to select from the drop down above. Email <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> with the details of what you are looking for.</p>
+		<p>Can't figure out which option to select from the drop down above. Submit the form below with as much detail as possible and we will get back to you with timing.</p>
+			<form action="" enctype="multipart/form-data" method="post">
+			What do you need help with?<br>
+			<textarea name="otherdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea><br>
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
+			<input type="hidden" name="hiddenfield" value="otherDescription" /> 
+			<input type="submit" value="Submit" />
+
+			</form>
+
+
 	</div>
 
 <!-- BUG REQUEST -->
@@ -652,6 +677,7 @@ if(count($_POST) > 0){
 		
 
 	</div>
+
 
 
 <?php 
