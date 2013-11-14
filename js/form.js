@@ -212,6 +212,12 @@ $(document).ready(function(){
 		} else if (tempValue == "Not Sure"){
 			$(".requestSection").hide();
 			$("#otherRequest").show();
+		} else if (tempValue == "Edit Video"){
+			$(".requestSection").hide();
+			$("#editVideo").show();
+		} else if (tempValue == "Upload Youtube"){
+			$(".requestSection").hide();
+			$("#uploadYoutube").show();
 		} else{
 			$(".requestSection").hide();
 		}

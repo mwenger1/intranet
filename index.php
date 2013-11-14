@@ -91,6 +91,40 @@ if(count($_POST) > 0){
 			}
 			break;
 
+		case 'editvideo':
+			$subject = "EDIT_VIDEO: " . $_POST["department"];
+			$to = PRIMARY_EMAIL;
+			$from = $_POST["fromemail"];
+			$message .= "Link: " . $_POST["videohome"] . "<br><br>";
+			$message .= "Instructions: " . $_POST["moreinstructions"] . "<br><br>";
+			$message .= "Due Date: " . $_POST["videoduedate"] . "<br><br>";
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your request to edit a video was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+		case 'uploadyoutube':
+			$subject = "UPLOAD YOUTUBE: " . $_POST["department"];
+			$to = "sstartz@michaeljfox.org";
+			$from = $_POST["fromemail"];
+			$message .= "Link: " . $_POST["videohome"] . "<br><br>";
+			$message .= "Title: " . $_POST["videotitle"] . "<br><br>";
+			$message .= "Description: " . $_POST["moreinstructions"] . "<br><br>";
+
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your request to add a Youtube video was successfully submitted to <a href='mailto:sstartz@michaeljfox.org'>Stephanie</a>. You can followup with her directly on updates and timing.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+
 		case 'edittext':
 			$subject = "EDIT: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
 			$to = PRIMARY_EMAIL;
@@ -226,7 +260,6 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
-							<option value="Designed Image">Create Image Macro</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
 						</optgroup>
 						<optgroup label="Analysis & Special Tracking">
@@ -240,11 +273,17 @@ if(count($_POST) > 0){
 							<option value="Send out Email">Send out Email</option>
 							<option value="Social Posts">Send out Social Posts</option>
 						</optgroup>
+						<optgroup label="Multimedia">
+							<option value="Designed Image">Create Image Macro</option>
+							<option value="Edit Video">Edit Video Footage</option>
+							<option value="Upload Youtube">Upload Video to Youtube</option>
+						</optgroup>
 						<optgroup label="Issues & Status">
 							<option value="Bug Discovered">Bug Discovered on Website</option>
 							<option value="Check on Status">Check on Status of Submitted Request</option>
 							<option value="Not Sure">Other</option>
 						</optgroup>
+
 
 
 				</select>
@@ -361,7 +400,51 @@ if(count($_POST) > 0){
 
 	</div>
 
+<!-- EDIT VIDEO FOOTAGE -->
+	<div id="editVideo" class="requestSection" >
 
+		<h3>Edit Video Footage</h3>
+		<p><a href="mailto:hoppenheimer@michaeljfox.org">Hannah</a> will be editing your video for you. Submit your request by filling in the form below.</p>
+		<form action="" enctype="multipart/form-data" method="post" >
+
+			<input type="text" placeholder="Shared drive link or drop box link" style="width:400px;" class="mb1" name="videohome" required />
+			<br>
+			<input type="text" placeholder="Due date (optional)" style="width:400px;" class="mb1" name="videoduedate"  />
+			<br>
+			<textarea name="moreinstructions" cols="80" rows="8" placeholder="Are there any instructions for the editing? (optional)" ></textarea>
+
+			<br>
+			<label>Attachments:</label><p>If there are any images you would like to include in the video, submit this form, and then reply to the confirmation email with those attachments.</p>
+			<br>
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
+			<input type="hidden" name="hiddenfield" value="editvideo" />
+			<input type="submit" value="Submit Request" />
+		</form>
+
+	</div>
+
+<!-- UPLOAD TO YOUTUBE -->
+	<div id="uploadYoutube" class="requestSection" >
+
+		<h3>Upload Video to Youtube</h3>
+		<p><a href="mailto:sstartz@michaeljfox.org">Stephanie Startz</a> will be uploading your video for you. Submit your request by filling in the form below.</p>
+		<form action="" enctype="multipart/form-data" method="post" >
+
+			<input type="text" placeholder="Shared drive link or drop box link" style="width:400px;" class="mb1" name="videohome" required />
+			<br>
+			<input type="text" placeholder="Video Title" style="width:400px;" class="mb1" name="videotitle" required />
+			<br>
+			<textarea name="moreinstructions" cols="80" rows="8" placeholder="Short description to appear next to video" ></textarea>
+			<br>
+
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
+			<input type="hidden" name="hiddenfield" value="uploadyoutube" />
+			<input type="submit" value="Submit Your Video" />
+		</form>
+
+	</div>
 <!-- EDIT TEXT -->
 	<div id="editText" class="requestSection">
 		<p>Whether there is a typo, a stat needs to be updated, or you want to reword something, fill in the form below.</p>
