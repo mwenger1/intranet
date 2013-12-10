@@ -8,6 +8,7 @@ function identifySubmitter(email){
 			"sstartz@michaeljfox.org":"Stephanie",
 			"nmarino@michaeljfox.org":"Nicolas",
 			"sbourque@michaeljfox.org":"Sue",
+			"nryerson@michaeljfox.org":"Nancy",
 			"hoppenheimer@michaeljfox.org":"Hannah"
 		},
 		"RESPART":{
