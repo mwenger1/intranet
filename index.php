@@ -124,6 +124,21 @@ if(count($_POST) > 0){
 			}
 			break;
 
+		case 'staffBioRequest':
+			$subject = "STAFF BIO CHANGE: " . $_POST["staff_name"];
+			$to = "mwenger@michaeljfox.org";
+			$from = $_POST["fromemail"];
+			$message .= "Staff Bio: " . $_POST["staff_bio_description"] . "<br><br>";
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your request to edit a staff bio has successfully been submitted to <a href='mailto:kbrown@michaeljfox.org'>Kimberly</a>. You can followup with her directly on updates and timing.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+
 
 		case 'edittext':
 			$subject = "EDIT: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
@@ -260,6 +275,7 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
+							<option value="Edit bio">Add/Edit Staff Bio page</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
 						</optgroup>
 						<optgroup label="Analysis & Special Tracking">
@@ -632,6 +648,22 @@ if(count($_POST) > 0){
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="otherDescription" /> 
+			<input type="submit" value="Submit" />
+
+			</form>
+
+
+	</div>
+
+<!-- EDIT STAFF BIO -->
+	<div id="staffBioRequest" class="requestSection">
+		<p>Have a new staff member or want to edit an existing bio on the website? See <a href="https://www.michaeljfox.org/foundation/leaders.html" target="_blank">leadership and staff page</a> for reference.</p>
+			<form action="" enctype="multipart/form-data" method="post">
+			Name: <input type="text" name="staff_name" />
+			<textarea name="staff_bio_description" cols="70" rows="20" placeholder="Staff bio." required></textarea><br>
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
+			<input type="hidden" name="hiddenfield" value="staffBioRequest" /> 
 			<input type="submit" value="Submit" />
 
 			</form>

@@ -220,6 +220,9 @@ $(document).ready(function(){
 		} else if (tempValue == "Upload Youtube"){
 			$(".requestSection").hide();
 			$("#uploadYoutube").show();
+		} else if (tempValue == "Edit bio"){
+			$(".requestSection").hide();
+			$("#staffBioRequest").show();
 		} else{
 			$(".requestSection").hide();
 		}
