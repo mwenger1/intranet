@@ -126,7 +126,7 @@ if(count($_POST) > 0){
 
 		case 'staffBioRequest':
 			$subject = "STAFF BIO CHANGE: " . $_POST["staff_name"];
-			$to = "mwenger@michaeljfox.org";
+			$to = "kbrown@michaeljfox.org";
 			$from = $_POST["fromemail"];
 			$message .= "Staff Bio: " . $_POST["staff_bio_description"] . "<br><br>";
 
