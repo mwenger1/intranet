@@ -85,7 +85,7 @@ function identifySubmitter(email){
 			"mbaptista@michaeljfox.org":"Marco",
 			"mfrasier@michaeljfox.org":"Mark",
 			"mfacheris@michaeljfox.org":"Maurizio",
-			"Mhaupt@michaeljfox.org":"Meredith",
+			"mhaupt@michaeljfox.org":"Meredith",
 			"nwillis@michaeljfox.org":"Nicole",
 			"pradford@michaeljfox.org":"Patricia",
 			"sdas@michaeljfox.org":"Sonal",
