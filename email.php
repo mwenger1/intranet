@@ -11,14 +11,14 @@
 		|| ($_FILES["attachment"]["type"] == "image/pjpeg")
 		|| ($_FILES["attachment"]["type"] == "application/msword")
 		|| ($_FILES["attachment"]["type"] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-		|| ($_FILES["attachment"]["type"] == "application/vnd.ms-excel"
-		|| ($_FILES["attachment"]["type"] == "application/msexcel"
-		|| ($_FILES["attachment"]["type"] == "application/x-msexcel"
-		|| ($_FILES["attachment"]["type"] == "application/x-ms-excel"
-		|| ($_FILES["attachment"]["type"] == "application/x-excel"
-		|| ($_FILES["attachment"]["type"] == "application/x-dos_ms_excel"
-		|| ($_FILES["attachment"]["type"] == "application/xls"
-		|| ($_FILES["attachment"]["type"] == "application/x-xls"
+		|| ($_FILES["attachment"]["type"] == "application/vnd.ms-excel")
+		|| ($_FILES["attachment"]["type"] == "application/msexcel")
+		|| ($_FILES["attachment"]["type"] == "application/x-msexcel")
+		|| ($_FILES["attachment"]["type"] == "application/x-ms-excel")
+		|| ($_FILES["attachment"]["type"] == "application/x-excel")
+		|| ($_FILES["attachment"]["type"] == "application/x-dos_ms_excel")
+		|| ($_FILES["attachment"]["type"] == "application/xls")
+		|| ($_FILES["attachment"]["type"] == "application/x-xls")
 		|| ($_FILES["attachment"]["type"] == "image/x-png")
 		|| ($_FILES["attachment"]["type"] == "application/pdf")
 
