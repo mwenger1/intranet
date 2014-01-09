@@ -488,7 +488,7 @@ if(count($_POST) > 0){
 
 			<br>
 			<label for="file1">Upload File (optional):</label>
-			<input type="file" name="attachment" id="file1"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
+			<input type="file" name="attachment" id="file1"> <span>&nbsp;(jpg, png, doc, docx, pdf, xls)<br>
 			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
@@ -720,7 +720,7 @@ if(count($_POST) > 0){
 			<textarea name="bugdescription" cols="80" rows="15" placeholder="Provide step by step details of how to recreate the bug." required ></textarea>
 			<br>
 			<label for="file2">Upload Screenshot of Issue (optional):</label>
-			<input type="file" name="attachment" id="file2"> <span>&nbsp;(jpg, png, doc, docx, pdf)<br>
+			<input type="file" name="attachment" id="file2"> <span>&nbsp;(jpg, png, doc, docx, pdf, xls)<br>
 			<br>
 
 			<input type="hidden" name="fromemail" value="" />
