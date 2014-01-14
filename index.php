@@ -243,7 +243,7 @@ if(count($_POST) > 0){
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Digital Strategy Forms</title>
+        <title>Digital Strategy Intranet</title>
         <link rel="stylesheet" href="css/form.css">
         <script src="js/vendor/jquery.js"></script>
         <script src="js/form.js"></script>
