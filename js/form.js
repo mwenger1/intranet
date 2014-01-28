@@ -104,6 +104,7 @@ function identifySubmitter(email){
 			"mmcguire@michaeljfox.org":"Maggie",
 			"hteichholtz@michaeljfox.org":"Holly",
 			"cbrdey@michaeljfox.org":"Christina",
+			"ksawicki@michaeljfox.org":"Kim",
 			"communicationsintern@michaeljfox.org":"Ashleigh"
 		}
 	};
