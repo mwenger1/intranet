@@ -185,10 +185,10 @@ if(count($_POST) > 0){
 			$subject = "EMAIL: " . $_POST["emailName"];
 			$to = array('to' => 'sbourque@michaeljfox.org', 'cc' => array('nryerson@michaeljfox.org', 'mwenger@michaeljfox.org'), 'bcc' => 'nmarino@michaeljfox.org');
 			$from = $_POST["fromemail"];
-			$message .= "Team: " . $_POST["department"] . "<br><br>";
+			$message .= "Department: " . $_POST["department"] . "<br><br>";
 			$message .= "Date: " . $_POST["emailDate"] . "<br><br>";
 			$message .= "Time: " . $_POST["emailTime"] . "<br><br>";
-			$message .= "Type: " . $_POST["emailType"] . "<br><br>";
+			$message .= "Template: " . $_POST["emailType"] . "<br><br>";
 			$message .= "Audience: " . $_POST["emailAudience"] . "<br><br>";
 			$message .= "Supression: " . $_POST["emailSupression"] . "<br><br>";
 
