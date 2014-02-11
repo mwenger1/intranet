@@ -181,6 +181,27 @@ if(count($_POST) > 0){
 			}
 			break;
 
+		case 'sendemail':
+			$subject = $_POST["department"] . ": EMAIL: " . $_POST["emailName"] . ": ";
+			$to = "mwenger@michaeljfox.org, sbourque@michaeljfox.org";
+			$from = $_POST["fromemail"];
+			$message .= "Date: " . $_POST["emailDate"] . "<br><br>";
+			$message .= "Time: " . $_POST["emailTime"] . "<br><br>";
+
+			$attachment = false;	
+			if(file_exists($_FILES["attachment"]["tmp_name"])){
+				$attachment = true;	
+			} 
+
+			sendMessage($to,$from,$subject,$message,$attachment);
+			if (sendMessage){
+				$submitMessage = "Your email request was sent to Sue, Nancy and Nico. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+
 		case 'googleAnalytics':
 			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
