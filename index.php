@@ -182,11 +182,15 @@ if(count($_POST) > 0){
 			break;
 
 		case 'sendemail':
-			$subject = $_POST["department"] . ": EMAIL: " . $_POST["emailName"] . ": ";
-			$to = array('to' => 'sbourque@michaeljfox.org', 'cc' => array('mwenger@michaeljfox.org', 'Mike Wenger'), 'bcc' => 'nmarino@michaeljfox.org');
+			$subject = "EMAIL: " . $_POST["emailName"];
+			$to = array('to' => 'sbourque@michaeljfox.org', 'cc' => array('nryerson@michaeljfox.org', 'Nancy Ryerson'), 'bcc' => 'nmarino@michaeljfox.org');
 			$from = $_POST["fromemail"];
+			$message .= "Team: " . $_POST["department"] . "<br><br>";
 			$message .= "Date: " . $_POST["emailDate"] . "<br><br>";
 			$message .= "Time: " . $_POST["emailTime"] . "<br><br>";
+			$message .= "Type: " . $_POST["emailType"] . "<br><br>";
+			$message .= "Audience: " . $_POST["emailAudience"] . "<br><br>";
+			$message .= "Supression: " . $_POST["emailSupression"] . "<br><br>";
 
 			$attachment = false;	
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
@@ -195,7 +199,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your email request was sent to Sue, Nancy and Nico. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)";
+				$submitMessage = "Your email request was sent to Sue, Nancy and Nico. You should receive an email that includes all of the info for your submission. If you need to update the request or include any photos, reply to that email.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -868,8 +872,8 @@ if(count($_POST) > 0){
 					</select>
 
 				<br><br>
-				<label for="startTime">Email Type: </label>
-					<select>
+				<label for="emailType">Email Type: </label>
+					<select name="emailType" id="emailType">
 						<option>Select</option>
 						<option val="CT_Fair_Invite">CT_Fair_Invite</option>
 						<option val="Fox_Flash">Fox_Flash</option>
