@@ -871,12 +871,23 @@ if(count($_POST) > 0){
 				<label for="startTime">Email Type: </label>
 					<select>
 						<option>Select</option>
-						<option>Breaking News</option>
-						<option>Fox Flash</option>
-						<option>Event Invitation</option>
-						<option>Annual Giving</option>
+						<option val="CT_Fair_Invite">CT_Fair_Invite</option>
+						<option val="Fox_Flash">Fox_Flash</option>
+						<option val="Hot_Topics">Hot_Topics</option>
+						<option val="Research_Roundtable">Research_Roundtable</option>
+						<option val="TeamFox_Text_Only">TeamFox_Text_Only</option>
+						<option val="TeamFox_Text_with_Bullets">TeamFox_Text_with_Bullets</option>
+						<option val="Text_Only">Text_Only</option>
+						<option val="Text_with_Bullets">Text_with_Bullets</option>
+						<option val="Text_with_Image_Caption_and_Button">Text_with_Image_Caption_and_Button</option>
+						<option val="Text_with_Image_LEFT_Square">Text_with_Image_LEFT_Square</option>
+						<option val="Text_with_Image_RIGHT_Square">Text_with_Image_RIGHT_Square</option>
+						<option val="Text_with_Signature">Text_with_Signature</option>
+						<option val="Text_with_Video">Text_with_Video</option>
+						<option val="ThinkAble">ThinkAble</option>
+						<option val="eNewsletter">eNewsletter</option>
 					</select>
-					<span>(You can view all templates <a href="#">here</a>)</span>
+					<span>(You can view all templates <a href="https://github.com/Michael-J-Fox-Foundation/email_templates" target="_blank">here</a>)</span>
 
 				<br><br>
 				<input type="text" placeholder="Email Audience" name="emailAudience" required /><br><br>
