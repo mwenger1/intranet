@@ -831,21 +831,53 @@ if(count($_POST) > 0){
 		<p>Steps:</p>
 		<ol>
 			<li>Add email to the MJFF Email Calendar in Outlook one week prior to delivery.</li>
-			<li>Fill in this <a href="mailto:nryerson@michaeljfox.org,sbourque@michaeljfox.org?subject=Email Request&body=Subject Line:%0D%0A%0D%0AAudience:%0D%0A%0D%0A%0D%0A%0D%0ASuppression:%0D%0A%0D%0A%0D%0A%0D%0AImage: (if available, attach to this email)%0D%0A%0D%0A%0D%0A%0D%0AEmail Content: %0D%0A%0D%0A"> email template</a> the day before delivery by 2pm and click send.</li>
-			<li>For reference, we have three different email templages we use:
-				<ul>
-					<li><a href="https://www.michaeljfox.org/files/Breaking News Email Template.png" target="_blank">Breaking News Email Template</a></li>
-					<li><a href="https://www.michaeljfox.org/files/Standard Template.png" target="_blank">Standard Template</a></li>
-					<li><a href="https://www.michaeljfox.org/files/ThinkAble Template.png" target="_blank">ThinkAble Template</a></li>
-
-				</ul>
-			</li>
-
+			<li>Fill in form below 2 days prior to your email being sent. You can always make changes post submission (i.e. you need to provide a blog post link).</li>
 		</ol>
-		
 
+			<form action="" enctype="multipart/form-data" method="post" >
+				<input type="text" name="emailName" placeholder="Subject Line of Email" class="mt1" required /><br><br>
+				<label>Date Email is Going Out:</label>
+				<input type="date" placeholder="Date" name="emailDate" required /><br><br>
+				<label for="emailTime">Time Email is Going Out:</label>
+					<select name="emailTime">
+						<option>Select</option>
+						<option value="morning">Morning</option>
+						<option value="midday">Midday</option>
+						<option value="afternoon">Afternoon</option>
+					</select>
+
+				<br><br>
+				<label for="startTime">Email Type: </label>
+					<select>
+						<option>Select</option>
+						<option>Breaking News</option>
+						<option>Fox Flash</option>
+						<option>Event Invitation</option>
+						<option>Annual Giving</option>
+					</select>
+					<span>(You can view all templates <a href="#">here</a>)</span>
+
+				<br><br>
+				<input type="text" placeholder="Email Audience" name="emailAudience" required /><br><br>
+				<input type="text" placeholder="Supression List" name="emailSupression" required /><br><br>
+
+				<label for="file1">Upload Email Copy In Word Document:</label>
+				<input type="file" name="attachment" id="emailFile1"> &nbsp;(doc, docx)
+				<br><span style="font-style:italic; font-size: 0.8em;">If you have images, submit form and you will receive an autoemail. Reply to that email with photo attachments.</span>
+				<br>
+
+<!-- 				<label>Logo or Image</label><input type="file" />
+				<br>	-->
+				<input type="hidden" name="fromemail" value="" />
+				<input type="hidden" name="department" value="" />
+				<input type="hidden" name="hiddenfield" value="sendemail" />
+				<input type="submit" value="Submit Your Email Request" /> 
+			</form>
 	</div>
 
+
+
+	</div>
 
 
 <?php 
