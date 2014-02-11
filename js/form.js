@@ -76,6 +76,7 @@ function identifySubmitter(email){
 		},
 		"RESOPS":{
 			"nlaffir@michaeljfox.org":"Nazreen",
+			"dfleit@michaeljfox.org":"David",
 			"varnedo@michaeljfox.org":"Vanessa",
 			"njeffers@michaeljfox.org":"Nicholas",
 			"lherron@michaeljfox.org":"Lydia",
