@@ -62,7 +62,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -85,7 +85,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request to create an image macro was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to create an image macro was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -101,7 +101,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request to edit a video was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to edit a video was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -155,12 +155,31 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
+
+		case 'addrfa':
+			$subject = $_POST["department"] . ": ADD RFA: " . $_POST["rfaName"] . ": ";
+			$to = PRIMARY_EMAIL;
+			$from = $_POST["fromemail"];
+			$message .= "Date: " . $_POST["rfaDate"] . "<br><br>";
+
+			$attachment = false;	
+			if(file_exists($_FILES["attachment"]["tmp_name"])){
+				$attachment = true;	
+			} 
+
+			sendMessage($to,$from,$subject,$message,$attachment);
+			if (sendMessage){
+				$submitMessage = "Your RFA request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
 
 		case 'googleAnalytics':
 			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
@@ -170,7 +189,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -184,7 +203,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -198,7 +217,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. You will get an email once the issue is resolved.";
+				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br> You will get an email once the issue is resolved.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
