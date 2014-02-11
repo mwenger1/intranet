@@ -489,7 +489,7 @@ if(count($_POST) > 0){
 
 		<form action="" enctype="multipart/form-data" method="post" >
 			
-			<input type="url" placeholder="Name of RFA" style="width:400px;" class="mb1" name="rfaName" required />
+			<input type="text" placeholder="Name of RFA" style="width:400px;" class="mb1" name="rfaName" required />
 			<br>
 
 				<label>Launch Date:</label>
