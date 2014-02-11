@@ -275,6 +275,7 @@ if(count($_POST) > 0){
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
 							<option value="New Web Page">Add New Web Page</option>
+							<option value="Add Rfa">Add RFA</option>
 							<option value="Edit bio">Add/Edit Staff Bio page</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
 						</optgroup>
@@ -461,6 +462,39 @@ if(count($_POST) > 0){
 		</form>
 
 	</div>
+
+<!-- RFA UPLOAD -->
+	<div id="addRfa" class="requestSection">
+		<p>When adding a new RFA to the website, you can use this form to upload the initial word document with all of your content. Once you submit the form and want to make additional changes, make sure to use track changes in Word and then reply to your Fogbugz email with the new attachment.</p>
+		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
+
+		<form action="" enctype="multipart/form-data" method="post" >
+			
+			<input type="url" placeholder="Name of RFA" style="width:400px;" class="mb1" name="rfaName" required />
+			<br>
+
+				<label>Launch Date:</label>
+				<input style="margin-right:10px;"type="date" placeholder="Date" name="rfaDate" required />
+				<span style="font-style:italic; font-size: 0.8em;">To ensure enough time, submit the initial request 2 weeks prior</span>
+				<br>
+
+			<br>
+			<label for="file1">Upload Word Document:</label>
+			<input type="file" name="attachment" id="rfaFile1"> <span>&nbsp;(doc, docx)<br>
+			<br>
+			<input type="hidden" name="fromemail" value="" />
+			<input type="hidden" name="department" value="" />
+			<input type="hidden" name="hiddenfield" value="addrfa" />
+			<input type="submit" value="Submit Your RFA" />
+		</form>
+
+
+	</div>
+
+
+
+
+
 <!-- EDIT TEXT -->
 	<div id="editText" class="requestSection">
 		<p>Whether there is a typo, a stat needs to be updated, or you want to reword something, fill in the form below.</p>

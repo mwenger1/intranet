@@ -224,6 +224,9 @@ $(document).ready(function(){
 		} else if (tempValue == "Edit bio"){
 			$(".requestSection").hide();
 			$("#staffBioRequest").show();
+		} else if (tempValue == "Add Rfa"){
+			$(".requestSection").hide();
+			$("#addRfa").show();
 		} else{
 			$(".requestSection").hide();
 		}
