@@ -183,7 +183,7 @@ if(count($_POST) > 0){
 
 		case 'sendemail':
 			$subject = "EMAIL: " . $_POST["emailName"];
-			$to = array('to' => 'sbourque@michaeljfox.org', 'cc' => array('nryerson@michaeljfox.org', 'mwenger@michaeljfox.org'), 'bcc' => 'nmarino@michaeljfox.org');
+			$to = array('to' => 'sbourque@michaeljfox.org', 'to' => 'mwenger@michaeljfox.org', 'bcc' => 'nmarino@michaeljfox.org');
 			$from = $_POST["fromemail"];
 			$message .= "Department: " . $_POST["department"] . "<br><br>";
 			$message .= "Date: " . $_POST["emailDate"] . "<br><br>";
