@@ -760,9 +760,10 @@ if(count($_POST) > 0){
 
 			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
-				<option value="Major">Critical - Affects Majority of Users. Functionality not working.</option>
-				<option value="Medium">Medium - Affects Some Users. Fix When We Can.</option>
-				<option value="Minor">Minor - Less Important. Get to when there's time.</option>
+				<option value="Urgent">Urgent - Affects all users. Stop everything to fix.</option>
+				<option value="Major">High - Affects Majority of Users. Complete ASAP.</option>
+				<option value="Medium">Medium - Work on in a timely manner (~ 1 week).</option>
+				<option value="Minor">Low - Complete when time is available.</option>
 			</select>
 			<br>
 
