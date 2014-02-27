@@ -1,11 +1,10 @@
 function identifySubmitter(email){
 	var staff = {
 		"STRATEGY":{
+			"sstartz@michaeljfox.org":"Stephanie",
 			"mwenger@michaeljfox.org":"Mike",
-			"llong@michaeljfox.org":"Lura",
 			"skeating@michaeljfox.org":"Sean",
 			"lwordham@michaeljfox.org":"Laxmi",
-			"sstartz@michaeljfox.org":"Stephanie",
 			"nmarino@michaeljfox.org":"Nicolas",
 			"sbourque@michaeljfox.org":"Sue",
 			"njeffers@michaeljfox.org":"Nicholas",			
@@ -13,34 +12,35 @@ function identifySubmitter(email){
 			"hoppenheimer@michaeljfox.org":"Hannah"
 		},
 		"RESPART":{
+			"cmeunier@michaeljfox.org":"Claire",
 			"ldallepazze@michaeljfox.org":"Laura Dalle",
 			"schowdhury@michaeljfox.org":"Sohini",
 			"tmumford@michaeljfox.org":"Tracey",
 			"lcappelletti@michaeljfox.org":"Lily",
 			"ejoyce@michaeljfox.org":"Elizabeth",
 			"kforsberg@michaeljfox.org":"Katie",
-			"cmeunier@michaeljfox.org":"Claire",
 			"kwasilewski@michaeljfox.org":"Kelsey",
-			
+			"llong@michaeljfox.org":"Lura",			
+			"kpeabody@michaeljfox.org":"Katie",
 			"cmarshall@michaeljfox.org":"Claudia"
 		},
 		"SENIOR":{
 			"dbrooks@michaeljfox.org":"Debi",
 			"awhite@michaeljfox.org":"Annesha",
-			"kpeabody@michaeljfox.org":"Katie",
 			"tsherer@michaeljfox.org":"Todd"
 
 		},
 		"TEAMFOX":{
+			"ediemer@michaeljfox.org":"Liz",
 			"awoodhouse@michaeljfox.org":"Alexandra",
 			"spaddock@michaeljfox.org":"Stephanie",
-			"ediemer@michaeljfox.org":"Liz",
 			"sfox@michaeljfox.org":"Sam",
 			"klopez@michaeljfox.org":"Kristina",
 			"jrice@michaeljfox.org":"Jason"
 		},
 		"DEV":{
 			"kmilliron@michaeljfox.org":"Kristen",
+			"hfaba@michaeljfox.org":"Hayley",
 			"skelly@michaeljfox.org":"Sheila",
 			"haskew@michaeljfox.org":"Haley",
 			"landerson@michaeljfox.org":"Lauren",
@@ -57,10 +57,10 @@ function identifySubmitter(email){
 			"venos@michaeljfox.org":"Veronique",
 			"dking@michaeljfox.org":"Dina",
 			"kpate@michaeljfox.org":"Kristin",
-			"hfaba@michaeljfox.org":"Hayley",
 			"hnazardejaucourt@michaeljfox.org":"Hallie Nazar de"
 		},
 		"ADMIN":{
+			"jmartz@michaeljfox.org":"Joanne",
 			"eamanfu@michaeljfox.org":"Eric",
 			"acrowther@michaeljfox.org":"Ashleigh",
 			"gleung@michaeljfox.org":"Gary",
@@ -73,11 +73,11 @@ function identifySubmitter(email){
 			"fpaulino@michaeljfox.org":"Felix",
 			"alee@michaeljfox.org":"Alan",
 			"swalls@michaeljfox.org":"Simone",
-			"jmartz@michaeljfox.org":"Joanne",
 			"kwimberly@michaeljfox.org":"K.L.",
 			"kbrown@michaeljfox.org":"Kimberly"
 		},
 		"RESOPS":{
+			"aurkowitz@michaeljfox.org":"Alison",
 			"nlaffir@michaeljfox.org":"Nazreen",
 			"dfleit@michaeljfox.org":"David",
 			"varnedo@michaeljfox.org":"Vanessa",
@@ -95,7 +95,6 @@ function identifySubmitter(email){
 			"amartig@michaeljfox.org":"Adria",
 			"blong@michaeljfox.org":"Brennan",
 			"bfiske@michaeljfox.org":"Brian",
-			"aurkowitz@michaeljfox.org":"Alison",
 			"ageldmacher@michaeljfox.org":"Alexandra",
 			"krivera@michaeljfox.org":"Katherine",
 			"kvestuto@michaeljfox.org":"Kathleen",
