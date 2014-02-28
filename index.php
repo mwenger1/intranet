@@ -74,6 +74,7 @@ if(count($_POST) > 0){
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= "Other Dimensions: " . $otherdimensions . "<br><br>";
 			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
@@ -141,9 +142,10 @@ if(count($_POST) > 0){
 
 
 		case 'edittext':
-			$subject = "EDIT: " . $_POST["department"] . ": " . $_POST["priority"] . ": ";
+			$subject = "EDIT PAGE: " . $_POST["department"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
@@ -451,7 +453,14 @@ if(count($_POST) > 0){
 
 			<input type="text" placeholder="Text to go over macro. Keep it short!" style="width:400px;" class="mb1" name="macrotext" required />
 			<br>
-			<input type="text" placeholder="Due date (optional)" style="width:400px;" class="mb1" name="macroduedate"  />
+
+			<select name="priority" class="mb1" required>
+				<option>Choose a Priority</option>
+				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
+				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+			</select>
+			<br>
+			<input type="text" placeholder="Due date" style="width:400px;" class="mb1" name="macroduedate"  />
 			<br>
 
 			<input type="hidden" name="fromemail" value="" />
