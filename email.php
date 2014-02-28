@@ -15,7 +15,6 @@
 		|| ($_FILES["attachment"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 		|| ($_FILES["attachment"]["type"] == "application/vnd.ms-powerpoint")
 		|| ($_FILES["attachment"]["type"] == "application/vnd.openxmlformats-officedocument.presentationml.presentation")
-		|| ($_FILES["attachment"]["type"] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 		|| ($_FILES["attachment"]["type"] == "application/msexcel")
 		|| ($_FILES["attachment"]["type"] == "application/x-msexcel")
 		|| ($_FILES["attachment"]["type"] == "application/x-ms-excel")
