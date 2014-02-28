@@ -44,7 +44,8 @@
 		  }
 		else
 		  {
-		  echo "Invalid file";
+		  echo "Invalid file. Contact mwenger@michaeljfox.org or try submitting the form with a different file type.";
+		  die();
 		  return false;
   		}
 	}
