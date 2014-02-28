@@ -214,6 +214,7 @@ if(count($_POST) > 0){
 			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
 
 			sendMessage($to,$from,$subject,$message);
@@ -228,6 +229,7 @@ if(count($_POST) > 0){
 			$subject = "OTHER: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["otherdescription"];
 
 			sendMessage($to,$from,$subject,$message);
@@ -242,6 +244,7 @@ if(count($_POST) > 0){
 			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
 
 			sendMessage($to,$from,$subject,$message);
@@ -603,6 +606,16 @@ if(count($_POST) > 0){
 			<form action="" enctype="multipart/form-data" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea>
+						<br>
+
+			<select name="priority" class="mb1" required>
+				<option>Choose a Priority</option>
+				<option value="Major">High - Need right away. Complete ASAP.</option>
+				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
+				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+			</select>
+			<br>
+
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
@@ -625,6 +638,14 @@ if(count($_POST) > 0){
 			<form action="" enctype="multipart/form-data" method="post">
 			What are you trying to gain insight into?<br>
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required ></textarea>
+			<br>
+			<select name="priority" class="mb1" required>
+				<option>Choose a Priority</option>
+				<option value="Major">High - Need right away. Complete ASAP.</option>
+				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
+				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+			</select>
+			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="ftfAnalytics" /> 
@@ -734,6 +755,15 @@ if(count($_POST) > 0){
 			<form action="" enctype="multipart/form-data" method="post">
 			What do you need help with?<br>
 			<textarea name="otherdescription" cols="70" rows="20" placeholder="Be sure to give as much information as possible" required></textarea><br>
+			<br>
+			<select name="priority" class="mb1" required>
+				<option>Choose a Priority</option>
+				<option value="Urgent">Urgent - Affects all users. Stop everything to fix.</option>
+				<option value="Major">High - Affects Majority of Users. Complete ASAP.</option>
+				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
+				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+			</select>
+			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
 			<input type="hidden" name="hiddenfield" value="otherDescription" /> 
