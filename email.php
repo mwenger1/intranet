@@ -37,18 +37,9 @@
 		    }
 		  else
 		    {
-		    if (file_exists("upload/" . $_FILES["attachment"]["name"]))
-		      {
-		      echo $_FILES["attachment"]["name"] . " already exists. ";
-		      return false;
-		      }
-		      
-		    else
-		      {
 		      move_uploaded_file($_FILES["attachment"]["tmp_name"],"upload/" . $_FILES["attachment"]["name"]);
 		      $fullTmpPath = FILEPATH . "upload/" . $_FILES["attachment"]["name"];
 		      return $fullTmpPath;
-		      }
 		    }
 		  }
 		else
