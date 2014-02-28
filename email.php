@@ -2,7 +2,7 @@
 		// BEGIN PREPERATION OF EMAIL
 
 	function checkAttachment(){
-		$allowedExts = array("gif", "jpeg", "jpg", "png","pdf","doc","docx");
+		$allowedExts = array("gif", "jpeg", "jpg", "png","pdf","doc","docx","xlsx","ppt");
 		$temp = explode(".", $_FILES["attachment"]["name"]);
 		$extension = end($temp);
 		if ((($_FILES["attachment"]["type"] == "image/gif")
