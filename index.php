@@ -48,9 +48,10 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = "BUG: " . $_POST["department"] . ": ". $_POST["priority"] . ": " . $_POST["bugname"];
+			$subject = "BUG: " . $_POST["department"] . ": " . $_POST["bugname"];
 			$to = PRIMARY_EMAIL;
 			$from = $_POST["fromemail"];
+			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
