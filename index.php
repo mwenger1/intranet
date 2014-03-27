@@ -8,7 +8,7 @@ if(count($_POST) > 0){
 	include('email.php');
 
 	// echo "form is submitting";
-	
+
 	$submitMessage = "";
 	$message = "";
 
@@ -24,14 +24,14 @@ if(count($_POST) > 0){
 			} else {
 				// echo "didnt write to file";
 			}
-			
+
 			break;
 
 		case 'addevent':
 
 			$subject = "EVENT: " . $_POST["department"] . ": " . $_POST["eventName"];
 			$to = PRIMARY_EMAIL;
-			$from = $_POST["fromemail"];			
+			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
 			$message .= "End: " . $_POST["eventEndTime"] . "<br><br>";
@@ -44,7 +44,7 @@ if(count($_POST) > 0){
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 
-			
+
 			break;
 
 		case 'bugrequest':
@@ -56,10 +56,10 @@ if(count($_POST) > 0){
 			$message .= "URL: " . $_POST["bugurl"] . "<br><br>";
 			$message .= $_POST["bugdescription"];
 
-			$attachment = false;	
+			$attachment = false;
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
-				$attachment = true;	
-			} 
+				$attachment = true;
+			}
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -80,10 +80,10 @@ if(count($_POST) > 0){
 			$message .= "Text: " . $_POST["macrotext"] . "<br><br>";
 			$message .= "Due Date: " . $_POST["macroduedate"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = false;
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
-				$attachment = true;	
-			} 
+				$attachment = true;
+			}
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -151,10 +151,10 @@ if(count($_POST) > 0){
 			$message .= "Original: " . $_POST["originaltext"] . "<br><br>";
 			$message .= "Replacement: " . $_POST["newtext"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = false;
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
-				$attachment = true;	
-			} 
+				$attachment = true;
+			}
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -171,10 +171,10 @@ if(count($_POST) > 0){
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["rfaDate"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = false;
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
-				$attachment = true;	
-			} 
+				$attachment = true;
+			}
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -196,10 +196,10 @@ if(count($_POST) > 0){
 			$message .= "Audience: " . $_POST["emailAudience"] . "<br><br>";
 			$message .= "Supression: " . $_POST["emailSupression"] . "<br><br>";
 
-			$attachment = false;	
+			$attachment = false;
 			if(file_exists($_FILES["attachment"]["tmp_name"])){
-				$attachment = true;	
-			} 
+				$attachment = true;
+			}
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
@@ -272,13 +272,13 @@ if(count($_POST) > 0){
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
-		
+
 		default:
 			$submitMessage = "Sorry. Your form did not submit. Try again or contact <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to report this problem.";
 			break;
 	};
 
-	// ADD RETURN BUTTON TO ALL CONFIRMATION FORMS 
+	// ADD RETURN BUTTON TO ALL CONFIRMATION FORMS
 	$submitMessage.="<br><br><a href='.' class='orangeBtn'>Submit Another Request</a>";
 
 
@@ -304,7 +304,7 @@ if(count($_POST) > 0){
 	<div id="header">
 		<img src="https://www.michaeljfox.org/images/mjff-logo.gif" style="width: 200px;" />
     	<h1>Digital Strategy Requests</h1>
-    </div>	
+    </div>
 <?php
 	if ($formSubmitted){
 ?>
@@ -315,7 +315,7 @@ if(count($_POST) > 0){
 	}
 	else {
 ?>
-    	<p>The Digital Strategy team is here to help you with all of your online needs. To help us fufill your requests even faster, complete the form below.</p>  
+    	<p>The Digital Strategy team is here to help you with all of your online needs. To help us fufill your requests even faster, complete the form below.</p>
 			<label for="email" name="email">What's your email?</label>
 			<input type="email" id="email" name="email" placeholder="*******@michaeljfox.org" class="ml1" autofocus />
 			<div id="requestOptions">
@@ -325,7 +325,7 @@ if(count($_POST) > 0){
 						<optgroup label="Update Website">
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
-							<option value="New Web Page">Add New Web Page</option>
+							<option value="New Web Page">Add New Webpage or Functionality</option>
 							<option value="Add Rfa">Add RFA</option>
 							<option value="Edit bio">Add/Edit Staff Bio page</option>
 							<option value="Edit text">Edit Text/Information on a Page</option>
@@ -372,7 +372,7 @@ if(count($_POST) > 0){
 			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="vanityURL" /> 
+			<input type="hidden" name="hiddenfield" value="vanityURL" />
 			<input type="submit" value="Add Vanity URL" />
 
 			</form>
@@ -382,8 +382,8 @@ if(count($_POST) > 0){
 <!-- BLOG POST -->
 	<div id="blogPost" class="requestSection" >
 	 	<h3>If you have access to the Content Managment System (CMS):</h3>
-			<ol>	
-				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and add your post</a></li>				
+			<ol>
+				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and add your post</a></li>
 				<li>Tag the post using the appropriate taxonomy terms.</a></li>
 				<li>Use <a href="http://croply.com/" target="_blank">crop.ly</a> to edit image dimensions. NOTE: images should be 636px wide x 339px height.</li>
 				<li>Be sure to preview your post on the website by clicking the preview button.</li>
@@ -401,7 +401,7 @@ if(count($_POST) > 0){
 						</li>
 					</ul>
 				</li>
-				<li>Helpful Resources: 
+				<li>Helpful Resources:
 					<ul>
 						<li><a target="_blank" href="https://www.michaeljfox.org/files/10 questions to help you write better headlines _ Poynter.pdf">10 Questions to Write Better Posts</a></li>
 						<li><a target="_blank" href="https://www.michaeljfox.org/files/Blog Posting Steps.pdf">Blog Best Practices</a></li>
@@ -424,7 +424,7 @@ if(count($_POST) > 0){
 					</ul>
 				</li>
 			</ol>
-		
+
 	</div>
 
 <!-- IMAGE -->
@@ -447,13 +447,13 @@ if(count($_POST) > 0){
 			</select>
 			<br>
 			<div style="display:none;" id="hiddenMacroDimensions">
-			
+
 				<input type="text" placeholder="What dimensions are you looking for" style="width:400px;" class="mb1" name="macrootherdimensions" /><br>
 			</div>
 
 
 
-		
+
 
 			<input type="text" placeholder="Text to go over macro. Keep it short!" style="width:400px;" class="mb1" name="macrotext" required />
 			<br>
@@ -527,7 +527,7 @@ if(count($_POST) > 0){
 		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
 
 		<form action="" enctype="multipart/form-data" method="post" >
-			
+
 			<input type="text" placeholder="Name of RFA" style="width:400px;" class="mb1" name="rfaName" required />
 			<br>
 
@@ -559,7 +559,7 @@ if(count($_POST) > 0){
 		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
 
 		<form action="" enctype="multipart/form-data" method="post" >
-			
+
 			<input type="url" placeholder="Website URL that needs to be updated" style="width:400px;" class="mb1" name="editurl" required />
 			<br>
 
@@ -618,7 +618,7 @@ if(count($_POST) > 0){
 
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="googleAnalytics" /> 
+			<input type="hidden" name="hiddenfield" value="googleAnalytics" />
 			<input type="submit" value="Request Analysis" />
 
 			</form>
@@ -648,7 +648,7 @@ if(count($_POST) > 0){
 			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="ftfAnalytics" /> 
+			<input type="hidden" name="hiddenfield" value="ftfAnalytics" />
 			<input type="submit" value="Request Analysis" />
 
 			</form>
@@ -674,7 +674,7 @@ if(count($_POST) > 0){
 			<textarea name="analysisdescription" cols="70" rows="20" placeholder="Additional information" required ></textarea>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="crmAnalytics" /> 
+			<input type="hidden" name="hiddenfield" value="crmAnalytics" />
 			<input type="submit" value="Request Analysis" />
 
 			</form>
@@ -722,31 +722,33 @@ if(count($_POST) > 0){
 				<input type="hidden" name="fromemail" value="" />
 				<input type="hidden" name="department" value="" />
 				<input type="hidden" name="hiddenfield" value="addevent" />
-				<input type="submit" value="Add Your Event" /> 
+				<input type="submit" value="Add Your Event" />
 			</form>
 	</div>
 
 
 <!-- NEW PAGE REQUEST -->
 	<div id="newPageRequest" class="requestSection">
-		<p>To create a new page for the website, set up a half-hour meeting with Hannah Oppenheimer and Michael Wenger.</p>
-		<p>Some things to think about before the meeting:
-			<ul>
-				<li>It takes 3-5 days to put together a single landing page. 1-2 weeks to create several pages (or a mini-site). Schedule appropriately.</li>
-				<li>What is the content for the page? If you have content ready, you can save it in a word document.</li>
-				<li>Does the page need images or logos? Do you have them already or do you need the Digital Strategy to help you put them together.</li>
-				<li>What page template will work best?
-					<ul>
-						<li><a href="https://www.michaeljfox.org/page.html?ppmi-smell" target="_blank" >Standard Template (w/ Callouts)</a> - <span class="italics">Less Time Intensive</span></li>
-						<li><a href="https://www.michaeljfox.org/page.html?Summer-Series-Lemonade" target="_blank" >Standard Template (w/o Callouts)</a> - <span class="italics">Less Time Intensive</span></li>
-						<li><a href="http://www.michaeljfox.org/thinkableLanding/thinkable.html" target="_blank" >Customized Template</a> - <span class="italics">More Time Intensive</span></li>
+		<p>To add a new webpage or functionality, it's best to understand 3 questions:</p>
+		<h3>Who? What? Why?</h3>
+		<p>"User stories" offer a really helpful way to articulate this and some recent examples are:</p>
+			<ul style="font-size:0.9em;">
+				<li>As a PD Researcher, I want to be able to register for the PD Therapeutics conference so that I can learn the latest research and network with other scientists</li>
+				<li>As a visitor to the Team Fox website, I want to be able to see a real time counter of the top fundraisers so that I can see if I am eligible for MVP dinner</li>
+				<li>As a PD patient visiting the blog, I want to be able to read and print food recipes so that I can improve my diet</li>
 
-					</ul>
-				</li>
-				<li>How does this page fit within the site navigation? NOTE: not all pages can be available from the navigation due to limited real estate.</li>
-				<li>How will you promote this new page? (social, email blast)</li>
 			</ul>
-		</p>
+		<p>Use the form below to submit your "user story." Once submitted, it will go into the Digital Strategy's work backlog. Your department champion (<span class="deptChampion"></span>) will work collaboratively with other department champions and Sean Keating to prioritize the work. Follow up with <span class="deptChampion"></span> to check in on timing for completion.</p>
+
+		<p>As a <input type="text" placeholder="PD Researcher" name="staff_name" style="margin-left:5px; width: 150px;"/> I want <input type="text" name="staff_name" placeholder="to be able to register for the PD Therapeutics conference" style="margin-left:5px; width: 380px;" /><br>
+		so that <input type="text" name="staff_name" placeholder="I can learn the latest research and network with other scientists" style="margin-left:5px; width:460px;" />.</p>
+		<textarea name="otherdescription" cols="70" rows="6" placeholder="Provide any additional information about why this is important for the foundation, or how you would like it to be implemented." required></textarea><br>
+
+		<input type="hidden" name="fromemail" value="" />
+		<input type="hidden" name="department" value="" />
+		<input type="hidden" name="hiddenfield" value="newPageRequest" />
+		<input type="submit" value="Submit" />
+
 	</div>
 
 <!-- OTHER REQUEST -->
@@ -766,7 +768,7 @@ if(count($_POST) > 0){
 			<br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="otherDescription" /> 
+			<input type="hidden" name="hiddenfield" value="otherDescription" />
 			<input type="submit" value="Submit" />
 
 			</form>
@@ -782,7 +784,7 @@ if(count($_POST) > 0){
 			<textarea name="staff_bio_description" cols="70" rows="20" placeholder="Staff bio." required></textarea><br>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
-			<input type="hidden" name="hiddenfield" value="staffBioRequest" /> 
+			<input type="hidden" name="hiddenfield" value="staffBioRequest" />
 			<input type="submit" value="Submit" />
 
 			</form>
@@ -794,7 +796,7 @@ if(count($_POST) > 0){
 	<div id="bugRequest" class="requestSection">
 		<p>Bugs happen and thanks for your help in finding one. Fill in the form below so we can start working on the fix.</p>
 		<form action="" enctype="multipart/form-data" method="post" >
-			
+
 			<input type="text" placeholder="Briefly Describe the Bug" style="width:400px;" class="mb1" name="bugname" required />
 			<br>
 
@@ -868,7 +870,7 @@ if(count($_POST) > 0){
 		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation. Requests are called cases. When one of your cases is completed, you will automatically be notified by email.</p>
 		<p>If you want to check on the status of an open case, click on the link that was in the automated email response from cases@michaeljfox.fogbugz.com OR if you know your case ID number, you can fill it in on <a href="https://michaeljfox.fogbugz.com/default.asp?pg=pgPublicViewForm" target="_blank">Fogbugz</a>.</p>
 		<p>If you want to see how your case is prioritized relative to other requests coming from your department, email <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a>.</p>
-	</div>	
+	</div>
 
 
 
@@ -949,7 +951,7 @@ if(count($_POST) > 0){
 				<input type="hidden" name="fromemail" value="" />
 				<input type="hidden" name="department" value="" />
 				<input type="hidden" name="hiddenfield" value="sendemail" />
-				<input type="submit" value="Submit Your Email Request" /> 
+				<input type="submit" value="Submit Your Email Request" />
 			</form>
 	</div>
 
@@ -958,7 +960,7 @@ if(count($_POST) > 0){
 	</div>
 
 
-<?php 
+<?php
 }
 ?>
 </div>

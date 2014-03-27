@@ -1,5 +1,4 @@
-function identifySubmitter(email){
-	var staff = {
+var staff = {
 		"STRATEGY":{
 			"sstartz@michaeljfox.org":"Stephanie",
 			"mwenger@michaeljfox.org":"Mike",
@@ -7,7 +6,7 @@ function identifySubmitter(email){
 			"lwordham@michaeljfox.org":"Laxmi",
 			"nmarino@michaeljfox.org":"Nicolas",
 			"sbourque@michaeljfox.org":"Sue",
-			"njeffers@michaeljfox.org":"Nicholas",			
+			"njeffers@michaeljfox.org":"Nicholas",
 			"nryerson@michaeljfox.org":"Nancy",
 			"hoppenheimer@michaeljfox.org":"Hannah"
 		},
@@ -20,7 +19,7 @@ function identifySubmitter(email){
 			"ejoyce@michaeljfox.org":"Elizabeth",
 			"kforsberg@michaeljfox.org":"Katie",
 			"kwasilewski@michaeljfox.org":"Kelsey",
-			"llong@michaeljfox.org":"Lura",			
+			"llong@michaeljfox.org":"Lura",
 			"kpeabody@michaeljfox.org":"Katie",
 			"cmarshall@michaeljfox.org":"Claudia"
 		},
@@ -111,6 +110,10 @@ function identifySubmitter(email){
 		}
 	};
 
+var deptChampion = {"STRATEGY":"Stephanie Startz", "RESPART":"Claire Meunier","TEAMFOX":"Jason Rice","DEV":"Jason Rice", "ADMIN":"Joanne Martz","RESOPS":"Alison Urkowitz","MARCOMM":"Christina Brdey"};
+
+
+function identifySubmitter(email, staff){
 	for (var department in staff){
 		var tmpDept = staff[department];
 		for (var tmpEmail in tmpDept) {
@@ -119,7 +122,7 @@ function identifySubmitter(email){
 				personArray[0] = staff[department][tmpEmail];
 				personArray[1] = department;
 				// personArray[1] = "STRATEGY";
-				
+
 				return personArray;
 			}else{
 			}
@@ -128,27 +131,29 @@ function identifySubmitter(email){
 return false;
 
 }
-var person = identifySubmitter("mwenger@michaeljfox.org");
 
 $(document).ready(function(){
 	$(".requestSection").hide();
 	$("#requestOptions").hide();
-	
+
 	/* Figure out user */
 
-	$("#email").bind('blur keyup',function(e) { 
-		if (e.type == 'blur' || e.keyCode == '13'){ 
+	$("#email").bind('blur keyup',function(e) {
+		if (e.type == 'blur' || e.keyCode == '13'){
 
 			var tmpValue = $(this).val();
 			if(!tmpValue){
 				$("#requestOptions").hide();
 				$("#requestOptionsError").hide();
 			} else {
-				var submitterName = identifySubmitter(tmpValue);
+				var submitterName = identifySubmitter(tmpValue, staff);
 				if (submitterName[0]){
 					$("#submitterName").text(submitterName[0]);
 					$("input[name=fromemail]").val(tmpValue);
 					$("input[name=department]").val(submitterName[1]);
+					var dept = submitterName[1];
+					$(".deptChampion").text(deptChampion[dept]);
+					console.log('this ran');
 					$("#requestOptions").show();
 					$("#requestOptionsError").html("");
 				} else{
@@ -159,20 +164,19 @@ $(document).ready(function(){
 		}
 	});
 
-
 	$('#requestType').change(function(){
 
 		var tempValue = $(this).val();
 
 		/* Vanity URL */
-		
+
 		if (tempValue == "Vanity URL"){
 			$(".requestSection").hide();
 			$("#vanityURL").show();
 			$("#vanityAddress").focus();
 		} else if (tempValue == "Event on Calendar"){
 			$(".requestSection").hide();
-			$("#calendarRequest").show();	
+			$("#calendarRequest").show();
 		} else if (tempValue == "Blog Post"){
 			$(".requestSection").hide();
 			$("#blogPost").show();
@@ -181,30 +185,30 @@ $(document).ready(function(){
 			$("#bugRequest").show();
 		} else if (tempValue == "Check on Status"){
 			$(".requestSection").hide();
-			$("#fogbugzRequest").show();			
+			$("#fogbugzRequest").show();
 
 		} else if (tempValue == "Designed Image"){
 			$(".requestSection").hide();
-			$("#createImage").show();	
+			$("#createImage").show();
 
 		} else if (tempValue == "Edit text"){
 			$(".requestSection").hide();
-			$("#editText").show();	
+			$("#editText").show();
 
 		} else if (tempValue == "FTF Analytics Analysis"){
 			$(".requestSection").hide();
-			$("#ftfAnalytics").show();	
+			$("#ftfAnalytics").show();
 
 		} else if (tempValue == "Google Analytics Analysis"){
 			$(".requestSection").hide();
-			$("#googleAnalytics").show();	
+			$("#googleAnalytics").show();
 		} else if (tempValue == "CRM Analytics Analysis"){
 			$(".requestSection").hide();
-			$("#crmAnalytics").show();	
+			$("#crmAnalytics").show();
 
 		} else if (tempValue == "Social Posts"){
 			$(".requestSection").hide();
-			$("#socialPosts").show();	
+			$("#socialPosts").show();
 		} else if (tempValue == "Send out Email"){
 			$(".requestSection").hide();
 			$("#emailRequest").show();
@@ -214,6 +218,7 @@ $(document).ready(function(){
 		} else if (tempValue == "New Web Page"){
 			$(".requestSection").hide();
 			$("#newPageRequest").show();
+
 		} else if (tempValue == "Not Sure"){
 			$(".requestSection").hide();
 			$("#otherRequest").show();
@@ -233,7 +238,7 @@ $(document).ready(function(){
 			$(".requestSection").hide();
 		}
 
-		
+
 
 	});
 
