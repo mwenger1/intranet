@@ -240,6 +240,22 @@ if(count($_POST) > 0){
 			}
 			break;
 
+		case 'newPageRequest':
+			$subject = "As a " .  $_POST["as_a"] . " I want " . $_POST["i_want"] . " so that " . $_POST["so_that"];
+			$to = "hoppenheimer@michaeljfox";
+			$from = $_POST["fromemail"];
+			$message .= $_POST["user_story_description"];
+
+			sendMessage($to,$from,$subject,$message);
+			if (sendMessage){
+				$submitMessage = "Your user story was successfully submitted to the backlog. To get an update on its status, you can reach out to your department champion.";
+			} else{
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+			}
+			break;
+
+
+
 		case 'ftfAnalytics':
 			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
 			$to = PRIMARY_EMAIL;
@@ -739,15 +755,16 @@ if(count($_POST) > 0){
 
 			</ul>
 		<p>Use the form below to submit your "user story." Once submitted, it will go into the Digital Strategy's work backlog. Your department champion (<span class="deptChampion"></span>) will work collaboratively with other department champions and Sean Keating to prioritize the work. Follow up with <span class="deptChampion"></span> to check in on timing for completion.</p>
-
-		<p>As a <input type="text" placeholder="PD Researcher" name="staff_name" style="margin-left:5px; width: 150px;"/> I want <input type="text" name="staff_name" placeholder="to be able to register for the PD Therapeutics conference" style="margin-left:5px; width: 380px;" /><br>
-		so that <input type="text" name="staff_name" placeholder="I can learn the latest research and network with other scientists" style="margin-left:5px; width:460px;" />.</p>
-		<textarea name="otherdescription" cols="70" rows="6" placeholder="Provide any additional information about why this is important for the foundation, or how you would like it to be implemented." required></textarea><br>
+		<form action="" method="post" >
+		<p>As a <input type="text" placeholder="PD Researcher" name="as_a" style="margin-left:5px; width: 150px;"/> I want <input type="text" name="i_want" placeholder="to be able to register for the PD Therapeutics conference" style="margin-left:5px; width: 380px;" /><br>
+		so that <input type="text" name="so_that" placeholder="I can learn the latest research and network with other scientists" style="margin-left:5px; width:460px;" />.</p>
+		<textarea name="user_story_description" cols="70" rows="6" placeholder="Provide any additional information about why this is important for the foundation, or how you would like it to be implemented." required></textarea><br>
 
 		<input type="hidden" name="fromemail" value="" />
 		<input type="hidden" name="department" value="" />
 		<input type="hidden" name="hiddenfield" value="newPageRequest" />
 		<input type="submit" value="Submit" />
+		</form>
 
 	</div>
 
