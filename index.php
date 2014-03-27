@@ -242,7 +242,7 @@ if(count($_POST) > 0){
 
 		case 'newPageRequest':
 			$subject = "As a " .  $_POST["as_a"] . " I want " . $_POST["i_want"] . " so that " . $_POST["so_that"];
-			$to = "hoppenheimer@michaeljfox";
+			$to = "hoppenheimer@michaeljfox.org";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["user_story_description"];
 
