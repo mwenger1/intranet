@@ -99,6 +99,7 @@ var staff = {
 			"kvestuto@michaeljfox.org":"Kathleen",
 			"ckopil@michaeljfox.org":"Katie",
 			"jlangon@michaeljfox.org":"Jesse",
+			"lgellner@michaeljfox.org":"Lisa",
 			"kkubota@michaeljfox.org":"Ken"
 		},
 		"MARCOMM":{
