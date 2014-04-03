@@ -30,7 +30,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "EVENT: " . $_POST["department"] . ": " . $_POST["eventName"];
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -48,8 +48,8 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = "BUG: " . $_POST["department"] . ": " . $_POST["bugname"];
-			$to = PRIMARY_EMAIL;
+			$subject = $_POST["bugname"];
+			$to = "michaeljfoxbugs@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
@@ -72,7 +72,7 @@ if(count($_POST) > 0){
 
 		case 'imagemacro':
 			$subject = "MACRO: " . $_POST["department"] . ": " . $_POST["imagetype"] . ": ";
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
@@ -95,7 +95,7 @@ if(count($_POST) > 0){
 
 		case 'editvideo':
 			$subject = "EDIT_VIDEO: " . $_POST["department"];
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Link: " . $_POST["videohome"] . "<br><br>";
 			$message .= "Instructions: " . $_POST["moreinstructions"] . "<br><br>";
@@ -144,7 +144,7 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "EDIT PAGE: " . $_POST["department"];
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
@@ -167,7 +167,7 @@ if(count($_POST) > 0){
 
 		case 'addrfa':
 			$subject = $_POST["department"] . ": ADD RFA: " . $_POST["rfaName"] . ": ";
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["rfaDate"] . "<br><br>";
 
@@ -212,7 +212,7 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
@@ -227,7 +227,7 @@ if(count($_POST) > 0){
 
 		case 'otherDescription':
 			$subject = "OTHER: " . $_POST["department"] . ": ";
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["otherdescription"];
@@ -242,7 +242,7 @@ if(count($_POST) > 0){
 
 		case 'newPageRequest':
 			$subject = "As a " .  $_POST["as_a"] . " I want " . $_POST["i_want"] . " so that " . $_POST["so_that"];
-			$to = "hoppenheimer@michaeljfox.org";
+			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= $_POST["user_story_description"];
 
@@ -258,7 +258,7 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
-			$to = PRIMARY_EMAIL;
+			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
