@@ -4,7 +4,7 @@
 	function checkAttachment(){
 		$allowedExts = array("gif", "jpeg", "jpg", "png","pdf","doc","docx","xlsx","ppt");
 		$temp = explode(".", $_FILES["attachment"]["name"]);
-		$extension = end($temp);
+		$extension = strtolower(end($temp));
 		if ((($_FILES["attachment"]["type"] == "image/gif")
 		|| ($_FILES["attachment"]["type"] == "image/jpeg")
 		|| ($_FILES["attachment"]["type"] == "image/jpg")
@@ -50,7 +50,7 @@
 	}
 
 
-	function sendMessage($to,$from,$subject,$message,$attachment=false){	
+	function sendMessage($to,$from,$subject,$message,$attachment=false){
 
 		require_once ('include/emailer.php');
 		require_once ('config/amazonlogin.php');
