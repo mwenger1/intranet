@@ -144,7 +144,11 @@ if(count($_POST) > 0){
 
 		case 'edittext':
 			$subject = "Change the text for " . $_POST["department"];
-			$to = "michaeljfoxmaintenance@gmail.com";
+			if ($_POST["priority"]=="Urgent"){
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+			}else{
+				$to = "michaeljfoxmaintenance@gmail.com";
+			}
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= "URL: " . $_POST["editurl"] . "<br><br>";
