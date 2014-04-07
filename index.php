@@ -29,7 +29,7 @@ if(count($_POST) > 0){
 
 		case 'addevent':
 
-			$subject = "EVENT: " . $_POST["department"] . ": " . $_POST["eventName"];
+			$subject = "Add event " . $_POST["eventName"];
 			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
