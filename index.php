@@ -71,7 +71,7 @@ if(count($_POST) > 0){
 
 
 		case 'imagemacro':
-			$subject = "MACRO: " . $_POST["department"] . ": " . $_POST["imagetype"] . ": ";
+			$subject = "Create macro for " . $_POST["imagetype"] . ": ";
 			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$otherdimensions = isset($_POST["macrootherdimensions"])?$_POST["macrootherdimensions"]:"";
@@ -94,7 +94,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'editvideo':
-			$subject = "EDIT_VIDEO: " . $_POST["department"];
+			$subject = "Edit Video for " . $_POST["department"];
 			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Link: " . $_POST["videohome"] . "<br><br>";
@@ -127,7 +127,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'staffBioRequest':
-			$subject = "STAFF BIO CHANGE: " . $_POST["staff_name"];
+			$subject = "Update staff bio for " . $_POST["staff_name"];
 			$to = "kbrown@michaeljfox.org";
 			$from = $_POST["fromemail"];
 			$message .= "Staff Bio: " . $_POST["staff_bio_description"] . "<br><br>";
@@ -143,7 +143,7 @@ if(count($_POST) > 0){
 
 
 		case 'edittext':
-			$subject = "EDIT PAGE: " . $_POST["department"];
+			$subject = "Change the text for " . $_POST["department"];
 			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
@@ -166,7 +166,7 @@ if(count($_POST) > 0){
 
 
 		case 'addrfa':
-			$subject = $_POST["department"] . ": ADD RFA: " . $_POST["rfaName"] . ": ";
+			$subject = "Add the RFA: " . $_POST["rfaName"];
 			$to = "michaeljfoxmaintenance@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["rfaDate"] . "<br><br>";
@@ -226,7 +226,7 @@ if(count($_POST) > 0){
 			break;
 
 		case 'otherDescription':
-			$subject = "OTHER: " . $_POST["department"] . ": ";
+			$subject = "Misellaneous Item: " . $_POST["department"] . ": ";
 			$to = "michaeljfoxservices@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
