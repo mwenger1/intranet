@@ -49,7 +49,11 @@ if(count($_POST) > 0){
 
 		case 'bugrequest':
 			$subject = $_POST["bugname"];
-			$to = "michaeljfoxbugs@gmail.com";
+			if ($_POST["priority"]=="Urgent"){
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+			}else{
+				$to = "michaeljfoxmaintenance@gmail.com";
+			}
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message = "Browser: " . $_POST["bugbrowser"] . "<br><br>";
