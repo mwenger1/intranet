@@ -220,7 +220,11 @@ if(count($_POST) > 0){
 
 		case 'googleAnalytics':
 			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
-			$to = "michaeljfoxmaintenance@gmail.com";
+			if ($_POST["priority"]=="Urgent"){
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+			}else{
+				$to = "michaeljfoxmaintenance@gmail.com";
+			}
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
@@ -266,7 +270,11 @@ if(count($_POST) > 0){
 
 		case 'ftfAnalytics':
 			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
-			$to = "michaeljfoxmaintenance@gmail.com";
+			if ($_POST["priority"]=="Urgent"){
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+			}else{
+				$to = "michaeljfoxmaintenance@gmail.com";
+			}
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
 			$message .= $_POST["analysisdescription"];
