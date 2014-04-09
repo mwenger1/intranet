@@ -144,8 +144,8 @@ $(document).ready(function(){
 
 			var tmpValue = $(this).val();
 			if(!tmpValue){
-				// $("#requestOptions").hide();
-				// $("#requestOptionsError").hide();
+				$("#requestOptions").hide();
+				$("#requestOptionsError").hide();
 			} else {
 				var submitterName = identifySubmitter(tmpValue, staff);
 				if (submitterName[0]){
@@ -164,7 +164,6 @@ $(document).ready(function(){
 			}
 		}
 	});
-				$("#requestOptions").show();
 
 	$('#requestType').change(function(){
 
