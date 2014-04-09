@@ -70,7 +70,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -94,7 +94,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request to create an image macro was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to create an image macro was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -110,7 +110,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request to edit a video was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to edit a video was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -170,7 +170,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your request to edit text was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your request to edit text was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -190,7 +190,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message,$attachment);
 			if (sendMessage){
-				$submitMessage = "Your RFA request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your RFA request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -236,7 +236,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your analytics request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -251,7 +251,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -287,7 +287,7 @@ if(count($_POST) > 0){
 
 			sendMessage($to,$from,$subject,$message);
 			if (sendMessage){
-				$submitMessage = "Your analytics request was successfully submitted. You should receive a confirmation email to your inbox that contains the Fogbugz tracking number for future reference. (If you do not receive an email, contact <a href='mailto:mwenger@michaeljfox.org'>mwenger@michaeljfox.org</a>.)<br><br> You will get an email once the issue is resolved.";
+				$submitMessage = "Your analytics request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
 				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
 			}
@@ -561,8 +561,7 @@ if(count($_POST) > 0){
 
 <!-- RFA UPLOAD -->
 	<div id="addRfa" class="requestSection">
-		<p>When adding a new RFA to the website, you can use this form to upload the initial word document with all of your content. Once you submit the form and want to make additional changes, make sure to use track changes in Word and then reply to your Fogbugz email with the new attachment.</p>
-		<p>NOTE: If there are changes on multiple pages, fill in the form for each page where there is a change.</p>
+		<p>When adding a new RFA to the website, you can use this form to upload the initial word document with all of your content.</p>
 
 		<form action="" enctype="multipart/form-data" method="post" >
 
@@ -897,11 +896,7 @@ if(count($_POST) > 0){
 	</div>
 
 <!-- CHECK ON CASE -->
-	<div id="fogbugzRequest" class="requestSection">
-		<p>The Digital Strategy team uses <a href="https://michaeljfox.fogbugz.com/default.asp">Fogbugz</a> to track and prioritize all work coming in from all of the teams at the Foundation. Requests are called cases. When one of your cases is completed, you will automatically be notified by email.</p>
-		<p>If you want to check on the status of an open case, click on the link that was in the automated email response from cases@michaeljfox.fogbugz.com OR if you know your case ID number, you can fill it in on <a href="https://michaeljfox.fogbugz.com/default.asp?pg=pgPublicViewForm" target="_blank">Fogbugz</a>.</p>
-		<p>If you want to see how your case is prioritized relative to other requests coming from your department, email <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a>.</p>
-	</div>
+
 
 
 
