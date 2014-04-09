@@ -48,11 +48,14 @@ if(count($_POST) > 0){
 			break;
 
 		case 'bugrequest':
-			$subject = $_POST["bugname"];
+
 			if ($_POST["priority"]=="Urgent"){
+				$subject = "CRITIAL BUG: " . $_POST["bugname"];
 				$to = array('to' => 'michaeljfoxbugs@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
 			}else{
+				$subject = $_POST["bugname"];
 				$to = "michaeljfoxbugs@gmail.com";
+
 			}
 			$from = $_POST["fromemail"];
 			$message .= "Priority: " . $_POST["priority"] . "<br><br>";
@@ -147,10 +150,11 @@ if(count($_POST) > 0){
 
 
 		case 'edittext':
-			$subject = "Change the text for " . $_POST["department"];
 			if ($_POST["priority"]=="Urgent"){
+				$subject = "CRITICAL TEXT CHANGE: for " . $_POST["department"];
 				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
 			}else{
+				$subject = "Change text for " . $_POST["department"];
 				$to = "michaeljfoxmaintenance@gmail.com";
 			}
 			$from = $_POST["fromemail"];
@@ -219,10 +223,11 @@ if(count($_POST) > 0){
 
 
 		case 'googleAnalytics':
-			$subject = "ANALYTICS: Google: " . $_POST["department"] . ": ";
 			if ($_POST["priority"]=="Urgent"){
+				$subject = "CRITICAL ANALYTICS: Google: " . $_POST["department"] . ": ";
 				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
 			}else{
+				$subject = "Google Analytics for " . $_POST["department"] . ": ";
 				$to = "michaeljfoxmaintenance@gmail.com";
 			}
 			$from = $_POST["fromemail"];
@@ -269,10 +274,11 @@ if(count($_POST) > 0){
 
 
 		case 'ftfAnalytics':
-			$subject = "ANALYTICS: FTF: " . $_POST["department"] . ": ";
 			if ($_POST["priority"]=="Urgent"){
+			$subject = "CRITICALA ANALYTICS: FTF: " . $_POST["department"] . ": ";
 				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
 			}else{
+				$subject = "Foxtrialfinder Analytics for " . $_POST["department"] . ": ";
 				$to = "michaeljfoxmaintenance@gmail.com";
 			}
 			$from = $_POST["fromemail"];
