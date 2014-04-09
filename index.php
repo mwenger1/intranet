@@ -640,9 +640,8 @@ if(count($_POST) > 0){
 
 			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
-				<option value="Major">High - Need right away. Complete ASAP.</option>
-				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
-				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+				<option value="Minor">Standard Analytics Request: Will be Priorized in Backlog</option>
+				<option value="Urgent">Time Sensitive: Analysis is needed as soon as possible.</option>
 			</select>
 			<br>
 
@@ -671,9 +670,8 @@ if(count($_POST) > 0){
 			<br>
 			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
-				<option value="Major">High - Need right away. Complete ASAP.</option>
-				<option value="Medium">Medium - Work on in a timely manner (~ 1 week: First come first serve).</option>
-				<option value="Minor">Low - Complete when time is available (First come first serve)</option>
+				<option value="Minor">Standard Analytics Request: Will be Priorized in Backlog</option>
+				<option value="Urgent">Time Sensitive: Analysis is needed as soon as possible.</option>
 			</select>
 			<br>
 			<input type="hidden" name="fromemail" value="" />
