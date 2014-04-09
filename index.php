@@ -589,7 +589,7 @@ if(count($_POST) > 0){
 
 			<select name="priority" class="mb1" required>
 				<option>Choose a Priority</option>
-				<option value="Minor">Standard Chagne Request: Will be Priorized in Backlog</option>
+				<option value="Minor">Standard Change Request: Will be Priorized in Backlog</option>
 				<option value="Urgent">Critial Change: Affects all users or is time sensitve. Need to update right away.</option>
 			</select>
 			<br>
