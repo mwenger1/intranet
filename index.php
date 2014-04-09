@@ -370,10 +370,10 @@ if(count($_POST) > 0){
 							<option value="Edit Video">Edit Video Footage</option>
 							<option value="Upload Youtube">Upload Video to Youtube</option>
 						</optgroup>
-						<optgroup label="Issues & Status">
+						<optgroup label="Issues">
 							<option value="Bug Discovered">Bug Discovered on Website</option>
-							<option value="Check on Status">Check on Status of Submitted Request</option>
-							<option value="Not Sure">Other</option>
+<!-- 							<option value="Check on Status">Check on Status of Submitted Request</option>
+							<option value="Not Sure">Other</option> -->
 						</optgroup>
 
 
