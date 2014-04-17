@@ -363,10 +363,10 @@ if(count($_POST) > 0){
 						<optgroup label="Update Website">
 							<option value="Blog Post">Add a Blog Post</option>
 							<option value="Event on Calendar">Add Event on Calendar</option>
-							<option value="New Web Page">Add New Webpage or Functionality</option>
+							<option value="New Web Page">General Website Request</option>
 							<option value="Add Rfa">Add RFA</option>
 							<option value="Edit bio">Add/Edit Staff Bio page</option>
-							<option value="Edit text">Edit Text/Information on a Page</option>
+							<option value="Edit text">Simple Text Edit</option>
 						</optgroup>
 						<optgroup label="Analysis & Special Tracking">
 							<option value="Vanity URL">Create a Vanity URL</option>
