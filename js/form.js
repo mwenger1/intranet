@@ -106,7 +106,8 @@ var staff = {
 			"mmcguire@michaeljfox.org":"Maggie",
 			"hteichholtz@michaeljfox.org":"Holly",
 			"cbrdey@michaeljfox.org":"Christina",
-			"ksawicki@michaeljfox.org":"Kim",
+			"ksawicki@michaeljfox.org":"Kim S",
+			"kcastleberry@michaeljfox.org":"Kim C",
 			"communicationsintern@michaeljfox.org":"Ashleigh"
 		}
 	};
