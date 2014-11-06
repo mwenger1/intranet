@@ -7,6 +7,7 @@ var staff = {
 var deptChampion = {"TEAM":"Mike"};
 
 
+
 function identifySubmitter(email, staff){
 	for (var department in staff){
 		var tmpDept = staff[department];
