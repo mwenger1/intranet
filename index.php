@@ -14,7 +14,7 @@ if(count($_POST) > 0){
 
 	switch($_POST["hiddenfield"]) {
 		case 'vanityURL':
-			$submitMessage .= "You're vanity URL has successfully been submitted and will be available starting this Friday.<br><br>www.michaeljfox.org/<span class='bold'>" . $_POST["vanityAddress"] . "</span> will point to:<br><a href='" . $_POST["vanityPointer"] . "'>" . $_POST["vanityPointer"] . "</a><br><br><span class='bold'>NOTE:</span> Make sure that the URL above points to a working page. If any issues, you can followup with <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a>. NOTE: This request will not be logged in Jira.";
+			$submitMessage .= "You're vanity URL has successfully been submitted and will be available starting this Friday.<br><br>www.michaeljfox.org/<span class='bold'>" . $_POST["vanityAddress"] . "</span> will point to:<br><a href='" . $_POST["vanityPointer"] . "'>" . $_POST["vanityPointer"] . "</a><br><br><span class='bold'>NOTE:</span> Make sure that the URL above points to a working page. If any issues, you can followup with <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a>. NOTE: This request will not be logged in Jira.";
 
 			$fileName = "submissions/vanityurls.txt";
 			$output = "Redirect permanent /". $_POST["vanityAddress"] . " " . $_POST["vanityPointer"]. " #" . $_POST["fromemail"] .  "\n";
@@ -30,7 +30,7 @@ if(count($_POST) > 0){
 		case 'addevent':
 
 			$subject = "Add event " . $_POST["eventName"];
-			$to = "michaeljfoxservices@gmail.com";
+			$to = "michaelwenger27@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Date: " . $_POST["eventDate"] . "<br><br>";
 			$message .= "Start: " . $_POST["eventStartTime"] . "<br><br>";
@@ -41,7 +41,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your event (" . $_POST["eventName"] . ")  was successfully submitted and will be added to the calendar in the next few days. You will receive a confirmation email in the next few moments. If you want to followup on this request, reply to the confirmation email.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 
 
@@ -51,10 +51,10 @@ if(count($_POST) > 0){
 
 			if ($_POST["priority"]=="Urgent"){
 				$subject = "CRITIAL BUG: " . $_POST["bugname"];
-				$to = array('to' => 'michaeljfoxbugs@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+				$to = array('to' => 'michaelwenger27@gmail.com');
 			}else{
 				$subject = $_POST["bugname"];
-				$to = "michaeljfoxbugs@gmail.com";
+				$to = "michaelwenger27@gmail.com";
 
 			}
 			$from = $_POST["fromemail"];
@@ -72,7 +72,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -96,7 +96,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to create an image macro was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -112,7 +112,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to edit a video was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -129,7 +129,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to add a Youtube video was successfully submitted to <a href='mailto:sstartz@michaeljfox.org'>Stephanie</a>. You can followup with her directly on updates and timing.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -143,7 +143,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to edit a staff bio has successfully been submitted to <a href='mailto:kbrown@michaeljfox.org'>Kimberly</a>. You can followup with her directly on updates and timing.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -152,7 +152,7 @@ if(count($_POST) > 0){
 		case 'edittext':
 			if ($_POST["priority"]=="Urgent"){
 				$subject = "CRITICAL TEXT CHANGE: for " . $_POST["department"];
-				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com');
 			}else{
 				$subject = "Change text for " . $_POST["department"];
 				$to = "michaeljfoxmaintenance@gmail.com";
@@ -172,7 +172,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request to edit text was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -192,13 +192,13 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your RFA request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
 		case 'sendemail':
 			$subject = "EMAIL: " . $_POST["emailName"];
-#			$to = array('sbourque@michaeljfox.org', 'mwenger@michaeljfox.org', 'nryerson@michaeljfox.org');
+#			$to = array('sbourque@michaeljfox.org', 'michaelwenger27@gmail.com', 'nryerson@michaeljfox.org');
 			$to = array('to' => 'sbourque@michaeljfox.org', 'cc' => $_POST["fromemail"], 'bcc' => 'nmarino@michaeljfox.org');
 			$from = $_POST["fromemail"];
 			$message .= "Department: " . $_POST["department"] . "<br><br>";
@@ -217,7 +217,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your email request was sent to Sue, Nancy and Nico. You should receive an email that includes all of the info for your submission. If you need to update the request or include any photos, reply to that email.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -225,7 +225,7 @@ if(count($_POST) > 0){
 		case 'googleAnalytics':
 			if ($_POST["priority"]=="Urgent"){
 				$subject = "CRITICAL ANALYTICS: Google: " . $_POST["department"] . ": ";
-				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com');
 			}else{
 				$subject = "Google Analytics for " . $_POST["department"] . ": ";
 				$to = "michaeljfoxmaintenance@gmail.com";
@@ -238,7 +238,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your analytics request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -253,7 +253,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -267,7 +267,7 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your user story was successfully submitted to the backlog. To get an update on its status, you can reach out to your department champion.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
@@ -276,7 +276,7 @@ if(count($_POST) > 0){
 		case 'ftfAnalytics':
 			if ($_POST["priority"]=="Urgent"){
 			$subject = "CRITICALA ANALYTICS: FTF: " . $_POST["department"] . ": ";
-				$to = array('to' => 'michaeljfoxmaintenance@gmail.com', 'cc' => "skeating@michaeljfox.org", 'bcc' => 'hoppenheimer@michaeljfox.org');
+				$to = array('to' => 'michaeljfoxmaintenance@gmail.com');
 			}else{
 				$subject = "Foxtrialfinder Analytics for " . $_POST["department"] . ": ";
 				$to = "michaeljfoxmaintenance@gmail.com";
@@ -289,13 +289,13 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your analytics request was successfully submitted to Jira (the WebDevelopment request tool). If it was marked critical, we will look into it right away. Otherwise, your request will be added to the foundation backlog and your department's champion will be notified of your request.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
 		case 'crmAnalytics':
 			$subject = "ANALYTICS: CRM: " . $_POST["department"] . ": ";
-			$to = "nmarino@michaeljfox.org";
+			$to = "test@gmail.com";
 			$from = $_POST["fromemail"];
 			$message .= "Name: " . $_POST["crmName"] . "<br><br>";
 			$message .= "Purpose: " . $_POST["crmPurpose"] . "<br><br>";
@@ -307,12 +307,12 @@ if(count($_POST) > 0){
 			if (sendMessage){
 				$submitMessage = "Your analytics request was successfully submitted to Nico Marino. He will followup with timing on when it will be ready.";
 			} else{
-				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to notify him of this issue.";
+				$submitMessage = "Your request cannot be processed at this time. Email <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to notify him of this issue.";
 			}
 			break;
 
 		default:
-			$submitMessage = "Sorry. Your form did not submit. Try again or contact <a href='mailto:mwenger@michaeljfox.org'>Mike Wenger</a> to report this problem.";
+			$submitMessage = "Sorry. Your form did not submit. Try again or contact <a href='mailto:michaelwenger27@gmail.com'>Mike Wenger</a> to report this problem.";
 			break;
 	};
 
@@ -340,8 +340,7 @@ if(count($_POST) > 0){
     <body>
 	<div class="container">
 	<div id="header">
-		<img src="https://www.michaeljfox.org/images/mjff-logo.gif" style="width: 200px;" />
-    	<h1>Digital Strategy Requests</h1>
+    	<h1>Digital Requests</h1>
     </div>
 <?php
 	if ($formSubmitted){
@@ -355,9 +354,9 @@ if(count($_POST) > 0){
 ?>
     	<p>The Digital Strategy team is here to help you with all of your online needs. To help us fufill your requests even faster, complete the form below.</p>
 			<label for="email" name="email">What's your email?</label>
-			<input type="email" id="email" name="email" placeholder="*******@michaeljfox.org" class="ml1" autofocus />
+			<input type="email" id="email" name="email" placeholder="*******@gmail.com" class="ml1" autofocus />
 			<div id="requestOptions">
-				<p>Hi <span id="submitterName" class="bold">Mike</span>! What can the Digital Strategy team do for you today?</p>
+				<p>Hi <span id="submitterName" class="bold">Mike</span>! What can the Digital team do for you today?</p>
 				<select name="requestType" id="requestType">
 					<option value="">Select</option>
 						<optgroup label="Update Website">
@@ -406,7 +405,7 @@ if(count($_POST) > 0){
 			</ul>
 		</p>
 			<form action="" enctype="multipart/form-data" method="post">
-			www.michaeljfox.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
+			www.site.org/<input type="text" name="vanityAddress" id="vanityAddress" placeholder="vanitytext" required /><br/>
 			<input type="url" name="vanityPointer" placeholder="Website URL that the vanity link will point to" style="width:391px;" required /><span style="margin-left:1em;">Paste full url & check it</span><br/>
 			<input type="hidden" name="fromemail" value="" />
 			<input type="hidden" name="department" value="" />
@@ -437,15 +436,6 @@ if(count($_POST) > 0){
 					<ul>
 						<li>Include if timing is important. NOTE: Posts are published at roughly 9am, 12pm and 3pm.
 						</li>
-					</ul>
-				</li>
-				<li>Helpful Resources:
-					<ul>
-						<li><a target="_blank" href="https://www.michaeljfox.org/files/10 questions to help you write better headlines _ Poynter.pdf">10 Questions to Write Better Posts</a></li>
-						<li><a target="_blank" href="https://www.michaeljfox.org/files/Blog Posting Steps.pdf">Blog Best Practices</a></li>
-						<li><a target="_blank" href="https://www.michaeljfox.org/files/The Michael J Fox Foundation Blog - GUIDELINES.pdf">Posting Guidelines</a></li>
-						<li><a href="https://www.michaeljfox.org/files/MJFFStyleguideMay2012.pdf" target="_blank">Style Guidelines</a></li>
-
 					</ul>
 				</li>
 
@@ -517,7 +507,7 @@ if(count($_POST) > 0){
 	<div id="editVideo" class="requestSection" >
 
 		<h3>Edit Video Footage</h3>
-		<p><a href="mailto:hoppenheimer@michaeljfox.org">Hannah</a> will be editing your video for you. Submit your request by filling in the form below.</p>
+		<p>Person will be editing your video for you. Submit your request by filling in the form below.</p>
 		<form action="" enctype="multipart/form-data" method="post" >
 
 			<input type="text" placeholder="Shared drive link or drop box link" style="width:400px;" class="mb1" name="videohome" required />
@@ -541,7 +531,7 @@ if(count($_POST) > 0){
 	<div id="uploadYoutube" class="requestSection" >
 
 		<h3>Upload Video to Youtube</h3>
-		<p><a href="mailto:sstartz@michaeljfox.org">Stephanie Startz</a> will be uploading your video for you. Submit your request by filling in the form below.</p>
+		<p> will be uploading your video for you. Submit your request by filling in the form below.</p>
 		<form action="" enctype="multipart/form-data" method="post" >
 
 			<input type="text" placeholder="Shared drive link or drop box link" style="width:400px;" class="mb1" name="videohome" required />
@@ -630,7 +620,7 @@ if(count($_POST) > 0){
 	<div id="googleAnalytics" class="requestSection">
 	 	<p>Note:
 			<ul>
-				<li>All Google Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> by end of day Friday.</li>
+				<li>All Google Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:michaelwenger27@gmail.com">Mike Wenger</a> by end of day Friday.</li>
 				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
 				<li>What segment are you looking to analyze? (traffic from a custom url? visitors to a specific page?)</li>
 				<li>What conversions are important to look at (donations, email signups)?</li>
@@ -662,7 +652,7 @@ if(count($_POST) > 0){
 	<div id="ftfAnalytics" class="requestSection">
 	 	<p>Note:
 			<ul>
-				<li>Fox Trial Finder Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:mwenger@michaeljfox.org">Mike Wenger</a> by end of day Friday.</li>
+				<li>Fox Trial Finder Analytics analysis is generally scheduled for Fridays. You can expect to hear back from <a href="mailto:michaelwenger27@gmail.com">Mike Wenger</a> by end of day Friday.</li>
 				<li>Give as much details as possible the first time around in terms of what you are hoping to learn. That way we can get the specific information to you right away.</li>
 				<li>What segment are you looking to analyze? (traffic from a custom url? visitors to a specific page?)</li>
 				<li>What conversions are important to look at (donations, email signups)?</li>
@@ -689,7 +679,7 @@ if(count($_POST) > 0){
 
 <!-- CRM ANALYTICS -->
 	<div id="crmAnalytics" class="requestSection">
-		<p>CRM analytics is conducted by <a href="mailto:nmarino@michaeljfox.org">Nico Marino</a>.</p>
+		<p>CRM analytics is conducted by .</p>
 		<p>When you submit your request, Nico will respond with timing (based on other requests in the queue, and how intensive the report is to pull).</p>
 			<ul>
 
@@ -716,7 +706,7 @@ if(count($_POST) > 0){
 
 <!-- SOCIAL POSTS -->
 	<div id="socialPosts" class="requestSection">
-		<p>All social posts on Twitter, Facebook and Google Plus are managed by Stephanie Startz. <a href="mailto:sstartz@michaeljfox.org?subject=Social Post Request">Email Stephanie</a> to promote your content.</p>
+		<p>All social posts on Twitter, Facebook and Google Plus are managed by Stephanie Startz. to promote your content.</p>
 		<p>Things to include in your email:
 			<ul>
 				<li>What is the goal of the post (i.e. drive awareness, clinical trial signups, team fox event)</li>
@@ -732,7 +722,7 @@ if(count($_POST) > 0){
 			<ul>
 				<li><a href="http://50.57.35.97/cms/login.html" target="_blank">Login to the CMS</a> and follow these <a href="http://50.57.35.97/files/WebsiteEvents_development.pdf" target="_blank">Step by Step Instructions</a></li>
 				<li>Remember, the sooner you add your event to the calendar, the earlier people will know about it.</li>
-				<li>If your event requires a registration form, contact <a href="mailto:hoppenheimer@michaeljfox.org">Hannah Oppenheimer</a>.</li>
+				<li>If your event requires a registration form, contact .</li>
 			</ul>
 
 	 	<h3 class="mt2">If you do not have access to the CMS:</h3>
